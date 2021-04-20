@@ -7,11 +7,17 @@ public class Main {
         System.out.println("Hello, World!");
         Scanner myScanner = new Scanner(System.in); // Make scanner obj
 
-
+        String inputString = "";
         while(true){
             System.out.print("$ ");
-            String inputString = myScanner.nextLine();
+            inputString = myScanner.nextLine();
             System.out.println(inputString);
+
+
+
+            if(inputString.equals("exit()")){
+                System.exit(0);
+            }
         }
     }
 }
