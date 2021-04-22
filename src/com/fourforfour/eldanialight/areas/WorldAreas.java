@@ -10,11 +10,12 @@ import com.fourforfour.eldanialight.AreaKommands;
  * will have to keep track of previous location for battle vs dangerArea
  */
 public interface WorldAreas {
-    SafeArea lucino_castle = new SafeArea("lucino Castle",
+
+    Area lucino_castle = new SafeArea("lucino castle",
             new AreaList("lucino shops", "carnival", "lucino housing"),
             AreaKommands.shopCommand);
-    SafeArea lucino_shops = new SafeArea("lucino shops",
-            new AreaList("armory", "magic", "inn", "lucino front gate", "lucino Castle"),
+    Area lucino_shops = new SafeArea("lucino shops",
+            new AreaList("armory", "magic", "inn", "lucino front gate", "lucino castle"),
             AreaKommands.worldCommand);
     SafeArea lucino_front_gate = new SafeArea("lucino front gate",
             new AreaList("lucino shops", "open world"),

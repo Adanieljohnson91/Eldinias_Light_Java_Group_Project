@@ -2,7 +2,7 @@ package com.fourforfour.eldanialight.items;
 
 import java.util.ArrayList;
 
-public class UtilityItem {
+public class UtilityItem  extends Item{
     ArrayList<String> utilityItems = new ArrayList<>();
 
 
