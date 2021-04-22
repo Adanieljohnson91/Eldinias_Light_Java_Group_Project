@@ -1,5 +1,8 @@
 package com.fourforfour.eldanialight.characters;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Character {
 
     //FIELDS
@@ -11,6 +14,9 @@ public class Character {
     private int intel;
     private int speed;
     private PlayerType playerType;
+
+
+
     //PlayerClass playerClass
 
 
@@ -88,5 +94,6 @@ public class Character {
     public void setPlayerType(PlayerType playerType) {
         this.playerType = playerType;
     }
+
 
 }//EOC

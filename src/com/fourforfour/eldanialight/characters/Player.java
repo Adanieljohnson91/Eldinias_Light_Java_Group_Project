@@ -1,15 +1,21 @@
 package com.fourforfour.eldanialight.characters;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 
 public class Player extends Character {
 
+    private List<Quest> questLog = new ArrayList<>();
 
 
 
-    public static Character createPlayer(){
-        Character player = new Player();
+
+
+
+    public static Player createPlayer(){
+        Player player = new Player();
         Scanner myScanner = new Scanner(System.in);
         String tempPlayerType;
 
@@ -45,8 +51,10 @@ public class Player extends Character {
         System.out.println("Welcome " + player.getName() + " the " + player.getPlayerType() + ".");
         return player;
 
-
-
     }
 
+    public void addToQuestLog(Quest quest){
+     questLog.add(quest);
+
+    }
 }//EOC

@@ -1,4 +1,4 @@
 package com.fourforfour.eldanialight.items;
 
-public class WearItem {
+public class WearItem extends Item{
 }
