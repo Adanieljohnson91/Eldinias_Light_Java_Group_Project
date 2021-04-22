@@ -1,11 +1,13 @@
 package com.fourforfour.eldanialight;
 
 import com.fourforfour.eldanialight.characters.Character;
+import com.fourforfour.eldanialight.characters.Player;
 
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+        Player.createPlayer();
         System.out.println("Hello, World!");
         Scanner myScanner = new Scanner(System.in); // Make scanner obj
         //When the game is started we will have to
@@ -29,4 +31,6 @@ public class Main {
             }
         }
     }
+
+
 }
