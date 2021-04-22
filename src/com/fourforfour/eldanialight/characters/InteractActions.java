@@ -1,4 +1,12 @@
 package com.fourforfour.eldanialight.characters;
 
-public class InteractActions {
-}
+public interface InteractActions {
+
+     void talk();
+
+     void buy();
+
+     void sell();
+
+
+}//EOC
