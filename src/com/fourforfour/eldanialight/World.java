@@ -11,7 +11,8 @@ public class World implements WorldAreas {
     HashMap<String, Area> world = new HashMap<>();
     AreaKommands areaKommands = new AreaKommands();
 
-    public World(){
+    public World() {
+
         world.put("area1", area1);
         world.put("area2", area2);
         world.put("area3", area3);
@@ -19,5 +20,6 @@ public class World implements WorldAreas {
         world.put("area5", area5);
         world.put("area6", area6);
         world.put("area7", area7);
+
     }
 }
