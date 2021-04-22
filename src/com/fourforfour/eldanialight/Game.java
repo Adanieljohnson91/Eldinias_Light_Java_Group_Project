@@ -1,30 +1,25 @@
 package com.fourforfour.eldanialight;
 
 import com.fourforfour.eldanialight.areas.Area;
+import com.fourforfour.eldanialight.areas.AreaList;
+import com.fourforfour.eldanialight.characters.Character;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 public class Game {
-    //Area currentArea;
-    //Character;
+    public static Area currentArea = new Area("The Beginning", new AreaList("area1"), AreaKommands.battleCommand);
+    Character character;
+    World world = new World();
+    //Commands command ... each command has a list of commands that it can take in
+    //as the story progresses, this command will change
+    Game(Character character){
+        this.character = character;
+    }
 
-    void play(String input) {
-//        switch (input){
-//            case "go":
-//                System.out.println("Exit");
-//                break;
-//            case "help":
-//                System.out.println("Help");
-//                break;
-//            default:
-//                System.out.println("Error");
-//        }
+    public void play(String input) {
+        currentArea.commands(input);
     }
-    void go(String input){
-        //Display Available Areas
-        //currentArea.getAreaOption();
-        //Get Area Inputs
-        //currentArea = nav.get(input);
-        //System.out.println("Going");
-    }
+
 }
