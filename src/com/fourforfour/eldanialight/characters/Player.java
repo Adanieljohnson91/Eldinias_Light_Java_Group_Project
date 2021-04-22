@@ -8,8 +8,8 @@ public class Player extends Character {
 
 
 
-    public static void createPlayer(){
-        Character Player = new Player();
+    public static Character createPlayer(){
+        Character player = new Player();
         Scanner myScanner = new Scanner(System.in);
         String tempPlayerType;
 
@@ -17,32 +17,33 @@ public class Player extends Character {
         System.out.println("We must get some information from you  to know how to best help you defeat Tyronious the Black");
 
         System.out.println("What shall we call you?  :");
-        Player.setName(myScanner.nextLine());
+        player.setName(myScanner.nextLine());
 
         System.out.println("What style of fighter are you? ex. Mage, Knight,  :");
-        Player.setPlayerType(PlayerType.valueOf( myScanner.nextLine()));
-        Player.setHealth(50);
-        switch (Player.getPlayerType()){
-            case Mage:
-                Player.setStrength(10);
-                Player.setSpeed(20);
-                Player.setIntel(35);
-
-            case Archer:
-                Player.setStrength(15);
-                Player.setSpeed(30);
-                Player.setIntel(15);
-            case Knight:
-                Player.setStrength(35);
-                Player.setSpeed(20);
-                Player.setIntel(5);
-
+        player.setPlayerType(PlayerType.valueOf(myScanner.nextLine()));
+        player.setHealth(50);
+        switch (player.getPlayerType()){
+            case MAGE:
+                player.setStrength(10);
+                player.setSpeed(20);
+                player.setIntel(35);
+                break;
+            case ARCHER:
+                player.setStrength(15);
+                player.setSpeed(30);
+                player.setIntel(15);
+                break;
+            case KNIGHT:
+                player.setStrength(35);
+                player.setSpeed(20);
+                player.setIntel(5);
+                break;
             default:
                 System.out.println("You have entered an invalid type");
         }
 
-        System.out.println("Welcome " + Player.getName() + " the " + Player.getPlayerType() + ".");
-
+        System.out.println("Welcome " + player.getName() + " the " + player.getPlayerType() + ".");
+        return player;
 
 
 
