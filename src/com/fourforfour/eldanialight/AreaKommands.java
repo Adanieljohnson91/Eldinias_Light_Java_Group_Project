@@ -16,6 +16,7 @@ public class AreaKommands {
         shopCommand.add(Command.BUY);
         shopCommand.add(Command.SELL);
         shopCommand.add(Command.LEAVE);
+        shopCommand.add(Command.VENTURE);
 
         worldCommand.add(Command.GO);
         worldCommand.add(Command.VIEW);
@@ -26,11 +27,13 @@ public class AreaKommands {
         battleCommand.add(Command.ATTACK);
         battleCommand.add(Command.RUN);
         battleCommand.add(Command.ITEM);
+        battleCommand.add(Command.VENTURE);
     }
 
     public static void commands(Command c){
         switch (c){
             case BUY:
+                //Shops will have a buy command
                 System.out.println("Buying");
                 break;
             case EXIT:
@@ -64,7 +67,7 @@ public class AreaKommands {
                 System.out.println("Ignoring");
                 break;
             case VENTURE:
-                System.out.println("Venturing");
+                Game.currentArea.venture();
                 break;
             case OPEN:
                 System.out.println("Opening");
