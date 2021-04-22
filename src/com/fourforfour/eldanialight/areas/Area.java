@@ -2,9 +2,11 @@ package com.fourforfour.eldanialight.areas;
 
 import com.fourforfour.eldanialight.AreaKommands;
 import com.fourforfour.eldanialight.Command;
+import com.fourforfour.eldanialight.Game;
 
 import java.util.HashMap;
 import java.util.List;
+import java.util.Scanner;
 
 public class Area {
 
@@ -12,6 +14,7 @@ public class Area {
     private HashMap<String, Character> characters = new HashMap<>();
     private AreaList areas;
     private List<Command> command;
+    private Scanner scanner = new Scanner(System.in);
 
     public AreaList getAreas(){
         return this.areas;
@@ -37,6 +40,18 @@ public class Area {
         System.out.println("ERROR: Please input the following: ");
         printCommands();
 
+    }
+
+    public void venture(){
+        System.out.println("Where would you like to go?");
+        areas.view();
+        String destination = scanner.nextLine();
+        if(areas.areaList.contains(destination)){
+            Game.currentArea = Game.world.get(destination);
+        }else{
+            System.out.println("Invalid Entry");
+            venture();
+        }
     }
 
     public void viewAreas(){

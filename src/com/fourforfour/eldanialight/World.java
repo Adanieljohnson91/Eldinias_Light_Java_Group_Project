@@ -22,4 +22,8 @@ public class World implements WorldAreas {
         world.put("area7", area7);
 
     }
+
+    public Area get(String input){
+        return world.get(input);
+    }
 }
