@@ -10,7 +10,7 @@ public class Character {
     private int bezos;
     private int intel;
     private int speed;
-
+    private PlayerType playerType;
     //PlayerClass playerClass
 
 
@@ -79,6 +79,14 @@ public class Character {
 
     public void setSpeed(int speed) {
         this.speed = speed;
+    }
+
+    public PlayerType getPlayerType() {
+        return playerType;
+    }
+
+    public void setPlayerType(PlayerType playerType) {
+        this.playerType = playerType;
     }
 
 }//EOC
