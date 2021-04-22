@@ -8,22 +8,22 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class World implements WorldAreas {
-    HashMap<String, Area> world = new HashMap<>();
+    HashMap<String, ? super Area> world = new HashMap<>();
     AreaKommands areaKommands = new AreaKommands();
 
     public World() {
 
-        world.put("area1", area1);
-        world.put("area2", area2);
-        world.put("area3", area3);
-        world.put("area4", area4);
-        world.put("area5", area5);
-        world.put("area6", area6);
+        world.put("lucino castle", lucino_castle);
+        world.put("lucino shops", lucino_shops);
+        world.put("lucino front gate", lucino_front_gate);
+        world.put("open world", open_world);
+        world.put("evil forest", evil_forest);
+        world.put("badlands", badlands);
         world.put("area7", area7);
 
     }
 
     public Area get(String input){
-        return world.get(input);
+        return (Area)world.get(input);
     }
 }

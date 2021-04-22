@@ -9,7 +9,7 @@ import java.util.HashMap;
 import java.util.List;
 
 public class Game {
-    public static Area currentArea = new Area("The Beginning", new AreaList("area1"), AreaKommands.worldCommand);
+    public static Area currentArea = new Area("The Beginning", new AreaList("lucino castle"), AreaKommands.worldCommand);
     public static Character character;
     public static World  world = new World();
     //Commands command ... each command has a list of commands that it can take in
