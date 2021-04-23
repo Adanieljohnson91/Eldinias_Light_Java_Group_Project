@@ -10,13 +10,15 @@ public class Player extends Character {
 
     private List<Quest> questLog = new ArrayList<>();
 
-    public Player(){
-        super();
-    }
-    public Player(String name, int health, int strength, int defense, int bezos, int speed) {
-        super(name, health, strength, defense, bezos, speed);
+
+    public Player(String name, int health, int strength, int defense, int bezos,int intel, int speed, List<Quest> questLog) {
+        super(name, health, strength, defense, bezos,intel, speed);
+        this.questLog = questLog;
     }
 
+    public Player() {
+
+    }
 
     public static Player createPlayer(){
         Player player = new Player();

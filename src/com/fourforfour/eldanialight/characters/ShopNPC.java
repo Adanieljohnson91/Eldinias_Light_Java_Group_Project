@@ -12,8 +12,8 @@ public class ShopNPC extends Character implements InteractActions {
     Scanner scanner = new Scanner(System.in);
 
 
-    public ShopNPC(String name, int health, int strength, int defense, int bezos, int speed,String dialog) {
-        super(name, health, strength, defense, bezos, speed);
+    public ShopNPC(String name, int health, int strength, int defense, int bezos, int intel,  int speed,String dialog) {
+        super(name, health, strength, defense, bezos, intel,  speed);
         this.dialog = dialog;
     }
     public void talk() {
