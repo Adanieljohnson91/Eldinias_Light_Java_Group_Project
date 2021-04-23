@@ -2,6 +2,7 @@ package com.fourforfour.eldanialight.items;
 
 public class ConsumableItem  extends Item{
 
+
     private int healthPotion = 50;
     private int manaPotion = 50;
 
