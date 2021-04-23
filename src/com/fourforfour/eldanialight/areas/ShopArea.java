@@ -14,7 +14,7 @@ public class ShopArea extends SafeArea{
 
     public void view(){
         for(Item item: items){
-            //System.out.println(item.name);
+            System.out.println(item.getName());
         }
     }
 }
