@@ -2,6 +2,7 @@ package com.fourforfour.eldanialight.areas;
 
 import com.fourforfour.eldanialight.AreaKommands;
 import com.fourforfour.eldanialight.items.Item;
+import com.fourforfour.eldanialight.items.ItemsOfEldinia;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,9 +19,10 @@ public interface WorldAreas{
     Area lucino_castle = new SafeArea("lucino castle",
             new AreaList("lucino shops", "carnival", "lucino housing"),
             AreaKommands.shopCommand);
-    ShopArea lucino_shops = new ShopArea("lucino shops",
+    SafeArea lucino_shops = new SafeArea("lucino shops",
             new AreaList("armory", "magic", "inn", "lucino front gate", "lucino castle"),
-            AreaKommands.worldCommand, new ArrayList<>());
+            AreaKommands.worldCommand);
+    ShopArea armory = new ShopArea("armory", new AreaList("lucino shops"), AreaKommands.shopCommand, ItemsOfEldinia.armoryList);
     SafeArea lucino_front_gate = new SafeArea("lucino front gate",
             new AreaList("lucino shops", "open world"),
             AreaKommands.battleCommand);

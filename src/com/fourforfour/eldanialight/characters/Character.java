@@ -21,12 +21,8 @@ public class Character {
 
 
     //CONSTRUCTOR
-
-    public Character() {
-
-    }
     //all args
-    public Character(String name, int health, int strength, int defense, int bezos,int intel, int speed) {
+    public Character(String name, int health, int strength, int defense, int bezos, int speed) {
 
     }
 
