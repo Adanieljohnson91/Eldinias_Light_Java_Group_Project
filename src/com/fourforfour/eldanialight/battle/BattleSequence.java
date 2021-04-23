@@ -8,6 +8,13 @@ import java.util.Scanner;
 
 public class BattleSequence  extends Character{
     Scanner myScanner = new Scanner(System.in);
+
+
+
+
+
+
+
     /*
    public void enterBattle(){
 
