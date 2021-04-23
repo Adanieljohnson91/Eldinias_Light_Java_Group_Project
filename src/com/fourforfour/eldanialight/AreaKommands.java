@@ -1,5 +1,7 @@
 package com.fourforfour.eldanialight;
 
+import com.fourforfour.eldanialight.areas.ShopArea;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -33,7 +35,10 @@ public class AreaKommands {
     public static void commands(Command c){
         switch (c){
             case BUY:
-                //Shops will have a buy command
+                if(Game.currentArea instanceof ShopArea){
+                    ShopArea current = (ShopArea) Game.currentArea;
+                    current.vendor.barter(current.getItems());
+                }
                 System.out.println("Buying");
                 break;
             case EXIT:

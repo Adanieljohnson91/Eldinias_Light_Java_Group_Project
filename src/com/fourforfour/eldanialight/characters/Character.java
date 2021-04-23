@@ -1,5 +1,7 @@
 package com.fourforfour.eldanialight.characters;
 
+import com.fourforfour.eldanialight.items.Item;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,20 +16,24 @@ public class Character {
     private int intel;
     private int speed;
     private PlayerType playerType;
-
+    List<Item> items = new ArrayList<>();
 
 
     //PlayerClass playerClass
 
 
     //CONSTRUCTOR
+
     //no args
-    public Character() {
+    public Character(){
 
     }
-    //name only arg
-    public Character(String name){
-        setName(name);
+    //all args
+    public Character(String name, int health, int strength, int defense, int bezos,int intel, int speed) {
+
+    }
+
+    public Character(String name, int health, int strength, int defense, int bezos, int speed) {
     }
 
 
@@ -95,5 +101,8 @@ public class Character {
         this.playerType = playerType;
     }
 
+    public void addItem(Item item){
+        items.add(item);
+    }
 
 }//EOC

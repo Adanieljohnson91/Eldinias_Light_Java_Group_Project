@@ -25,8 +25,6 @@ public class Main {
             System.out.print("$ ");
             inputString = myScanner.nextLine();
             game.play(inputString);
-
-
             if (inputString.equals("exit()")) {
                 System.exit(0);
             }

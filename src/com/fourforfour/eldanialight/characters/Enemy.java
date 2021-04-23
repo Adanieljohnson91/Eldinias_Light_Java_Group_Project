@@ -2,12 +2,17 @@ package com.fourforfour.eldanialight.characters;
 
 public class Enemy extends Character implements BattleActions{
 
-    public Enemy(int health, int strength, int defense ){
 
-        setHealth(health);
-        setStrength(strength);
-        setDefense(defense);
+    public Enemy(String name, int health, int strength, int defense){
+
     }
+
+    public Enemy(String name, int health, int strength, int defense, int bezos, int speed) {
+        super(name, health, strength, defense, bezos, speed);
+    }
+
+
+
 
 
     @Override

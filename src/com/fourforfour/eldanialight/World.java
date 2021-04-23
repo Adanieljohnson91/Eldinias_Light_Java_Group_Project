@@ -7,7 +7,7 @@ import com.fourforfour.eldanialight.areas.WorldAreas;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class World implements WorldAreas {
+public class World implements WorldAreas  {
     HashMap<String, ? super Area> world = new HashMap<>();
     AreaKommands areaKommands = new AreaKommands();
 
@@ -19,7 +19,7 @@ public class World implements WorldAreas {
         world.put("open world", open_world);
         world.put("evil forest", evil_forest);
         world.put("badlands", badlands);
-        world.put("area7", area7);
+        world.put("armory", armory);
 
     }
 
