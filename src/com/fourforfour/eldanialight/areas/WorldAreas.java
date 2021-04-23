@@ -1,6 +1,7 @@
 package com.fourforfour.eldanialight.areas;
 
 import com.fourforfour.eldanialight.AreaKommands;
+import com.fourforfour.eldanialight.characters.ShopNPC;
 import com.fourforfour.eldanialight.items.Item;
 import com.fourforfour.eldanialight.items.ItemsOfEldinia;
 
@@ -22,7 +23,11 @@ public interface WorldAreas{
     SafeArea lucino_shops = new SafeArea("lucino shops",
             new AreaList("armory", "magic", "inn", "lucino front gate", "lucino castle"),
             AreaKommands.worldCommand);
-    ShopArea armory = new ShopArea("armory", new AreaList("lucino shops"), AreaKommands.shopCommand, ItemsOfEldinia.armoryList);
+    ShopArea armory = new ShopArea("armory",
+            new AreaList("lucino shops"),
+            AreaKommands.shopCommand,
+            ItemsOfEldinia.armoryList,
+            new ShopNPC("Hank", 10, 10, 10 ,10, 10, "Welcome to the Armory"));
     SafeArea lucino_front_gate = new SafeArea("lucino front gate",
             new AreaList("lucino shops", "open world"),
             AreaKommands.battleCommand);

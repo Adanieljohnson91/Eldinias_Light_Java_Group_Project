@@ -37,7 +37,7 @@ public class AreaKommands {
             case BUY:
                 if(Game.currentArea instanceof ShopArea){
                     ShopArea current = (ShopArea) Game.currentArea;
-                    current.view();
+                    current.vendor.barter(current.getItems());
                 }
                 System.out.println("Buying");
                 break;
