@@ -2,6 +2,7 @@ package com.fourforfour.eldanialight.characters;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 import java.util.Scanner;
 
 
@@ -17,16 +18,17 @@ public class Player extends Character {
     public static Player createPlayer(){
         Player player = new Player();
         Scanner myScanner = new Scanner(System.in);
-        String tempPlayerType;
+        String tempPlayerType ="";
 
-        System.out.println("Thank you for Coming to aid of Lord Black and the rest of Eldinia!!");
+
+        System.out.println("King: Thank you for coming to aid of Lord Black and the rest of Eldinia!!");
         System.out.println("We must get some information from you  to know how to best help you defeat Tyronious the Black");
 
         System.out.println("What shall we call you?  :");
-        player.setName(myScanner.nextLine());
+         player.setName(myScanner.nextLine());
 
         System.out.println("What style of fighter are you? ex. Mage, Knight,  :");
-        player.setPlayerType(PlayerType.valueOf(myScanner.nextLine()));
+         player.setPlayerType(PlayerType.valueOf(myScanner.nextLine().toUpperCase(Locale.ROOT)));
         player.setHealth(50);
         switch (player.getPlayerType()){
             case MAGE:
