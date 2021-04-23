@@ -27,7 +27,7 @@ public interface WorldAreas{
             new AreaList("lucino shops"),
             AreaKommands.shopCommand,
             ItemsOfEldinia.armoryList,
-            new ShopNPC("Hank", 10, 10, 10 ,10, 10, "Welcome to the Armory"));
+            new ShopNPC("Hank", 10, 10, 10 ,10, 10, 34, "Welcome to the Armory"));
     SafeArea lucino_front_gate = new SafeArea("lucino front gate",
             new AreaList("lucino shops", "open world"),
             AreaKommands.battleCommand);

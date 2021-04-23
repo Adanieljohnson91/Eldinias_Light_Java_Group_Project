@@ -33,6 +33,8 @@ public class Character {
 
     }
 
+    public Character(String name, int health, int strength, int defense, int bezos, int speed) {
+    }
 
 
     public String getName() {
