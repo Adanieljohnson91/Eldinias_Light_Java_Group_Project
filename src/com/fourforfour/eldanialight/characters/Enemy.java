@@ -1,22 +1,19 @@
 package com.fourforfour.eldanialight.characters;
 
 public class Enemy extends Character implements BattleActions{
-    //constructors
-    public Enemy(){ }
 
-    public Enemy(String name, int health, int strength, int speed){
-        this.setName(name);
-        this.setHealth(health);
-        this.setStrength(strength);
-        this.setSpeed(speed);
+
+    public Enemy(String name, int health, int strength, int defense){
+
     }
-    public Enemy(String name,int health, int strength, int speed,int intel){
-        this.setName(name);
-        this.setHealth(health);
-        this.setStrength(strength);
-        this.setSpeed(speed);
-        this.setIntel(intel);
+
+    public Enemy(String name, int health, int strength, int defense, int bezos, int speed) {
+        super(name, health, strength, defense, bezos, speed);
     }
+
+
+
+
 
     @Override
     public void attack() {

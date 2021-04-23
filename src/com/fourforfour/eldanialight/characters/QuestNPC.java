@@ -8,8 +8,8 @@ public class QuestNPC extends Character implements InteractActions {
     private String dialog;
 
 
-    public QuestNPC(String name, int health, int strength, int defense, int bezos, int speed,String dialog) {
-        super(name, health, strength, defense, bezos, speed);
+    public QuestNPC(String name, int health, int strength, int defense, int bezos, int intel, int speed,String dialog) {
+        super(name, health, strength, defense, bezos, intel, speed);
         this.dialog = dialog;
     }
 
