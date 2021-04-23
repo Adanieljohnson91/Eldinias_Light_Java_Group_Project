@@ -19,7 +19,7 @@ public class World implements WorldAreas  {
         world.put("open world", open_world);
         world.put("evil forest", evil_forest);
         world.put("badlands", badlands);
-        world.put("area7", area7);
+        world.put("armory", armory);
 
     }
 
