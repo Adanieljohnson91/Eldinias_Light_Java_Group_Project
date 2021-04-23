@@ -6,6 +6,7 @@ import com.fourforfour.eldanialight.Game;
 
 import java.util.HashMap;
 import java.util.List;
+import java.util.Locale;
 import java.util.Scanner;
 
 public class Area {
@@ -45,7 +46,7 @@ public class Area {
     public void venture(){
         System.out.println("Where would you like to go?");
         areas.view();
-        String destination = scanner.nextLine();
+        String destination = scanner.nextLine().toLowerCase(Locale.ROOT);
         if(areas.areaList.contains(destination)){
             Game.currentArea = Game.world.get(destination);
         }else{
