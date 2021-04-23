@@ -7,7 +7,7 @@ import com.fourforfour.eldanialight.areas.WorldAreas;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class World implements WorldAreas {
+public class World implements WorldAreas  {
     HashMap<String, ? super Area> world = new HashMap<>();
     AreaKommands areaKommands = new AreaKommands();
 

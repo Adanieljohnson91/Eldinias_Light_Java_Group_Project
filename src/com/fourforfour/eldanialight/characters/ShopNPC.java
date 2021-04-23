@@ -1,10 +1,12 @@
 package com.fourforfour.eldanialight.characters;
 
 public class ShopNPC extends Character implements InteractActions {
+    private String dialog;
 
 
-    public ShopNPC(int bezos){
-        setBezos(bezos);
+    public ShopNPC(String name, int health, int strength, int defense, int bezos, int speed,String dialog) {
+        super(name, health, strength, defense, bezos, speed);
+        this.dialog = dialog;
     }
 
     @Override

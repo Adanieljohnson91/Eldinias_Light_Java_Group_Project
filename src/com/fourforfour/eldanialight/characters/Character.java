@@ -21,14 +21,11 @@ public class Character {
 
 
     //CONSTRUCTOR
-    //no args
-    public Character() {
+    //all args
+    public Character(String name, int health, int strength, int defense, int bezos, int speed) {
 
     }
-    //name only arg
-    public Character(String name){
-        setName(name);
-    }
+
 
 
     public String getName() {

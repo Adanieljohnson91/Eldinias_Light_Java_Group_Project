@@ -13,7 +13,7 @@ import java.util.List;
  * battleCommands
  * will have to keep track of previous location for battle vs dangerArea
  */
-public interface WorldAreas {
+public interface WorldAreas{
 
     Area lucino_castle = new SafeArea("lucino castle",
             new AreaList("lucino shops", "carnival", "lucino housing"),
