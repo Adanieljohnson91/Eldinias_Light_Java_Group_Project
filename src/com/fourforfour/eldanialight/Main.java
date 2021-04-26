@@ -3,6 +3,7 @@ package com.fourforfour.eldanialight;
 import com.fourforfour.eldanialight.characters.Character;
 import com.fourforfour.eldanialight.characters.Player;
 
+import java.util.Locale;
 import java.util.Scanner;
 
 public class Main {
@@ -23,9 +24,9 @@ public class Main {
             System.out.println("Enter a command: ");
             Game.currentArea.printCommands();
             System.out.print("$ ");
-            inputString = myScanner.nextLine();
+            inputString = myScanner.nextLine().toUpperCase(Locale.ROOT);
             game.play(inputString);
-            if (inputString.equals("exit()")) {
+            if (inputString.equalsIgnoreCase("exit()")) {
                 System.exit(0);
             }
         }
