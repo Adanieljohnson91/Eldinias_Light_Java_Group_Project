@@ -14,5 +14,6 @@ public enum Command {
     IGNORE,
     LEAVE,
     VENTURE,
-    ITEM
+    ITEM,
+    VIEW_ITEMS
 }
