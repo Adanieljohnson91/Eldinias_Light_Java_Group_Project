@@ -1,9 +1,10 @@
 package com.fourforfour.eldanialight.characters;
 
-import com.fourforfour.eldanialight.items.Item;
+import com.fourforfour.eldanialight.items.*;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class Character {
 
@@ -17,7 +18,8 @@ public class Character {
     private int speed;
     private PlayerType playerType;
     List<Item> items = new ArrayList<>();
-
+    List<Item> equipment = new ArrayList<>();
+    Scanner scanner = new Scanner(System.in);
 
     //PlayerClass playerClass
 
@@ -25,11 +27,12 @@ public class Character {
     //CONSTRUCTOR
 
     //no args
-    public Character(){
+    public Character() {
 
     }
+
     //all args
-    public Character(String name, int health, int strength, int defense, int bezos,int intel, int speed) {
+    public Character(String name, int health, int strength, int defense, int bezos, int intel, int speed) {
 
     }
 
@@ -101,16 +104,72 @@ public class Character {
         this.playerType = playerType;
     }
 
-    public void addItem(Item item){
+    public void addItem(Item item) {
         items.add(item);
     }
 
-    public void useItem(String item){
-        //loog for item in list
-
-        //check if item is a consumable
-
-        //apply to characters stat
+    public void addWearableItem(WearItem item) {
+        item.equipItem(this);
+        equipment.add(item);
     }
 
+    // list items
+    public void listItems(){
+        for(Item item : items){
+            System.out.println(item.getName());
+        }
+        selectItem();
+    }
+
+    // select item
+    public void selectItem(){
+        System.out.println("Which Item would you like to select? ");
+        String userInput = scanner.nextLine();
+        if(checkItem(userInput)){
+            useItem(findItem(userInput));
+        }else{
+            System.out.println("Invalid Selection");
+            selectItem();
+        }
+    }
+
+    // check item  -- Will check to see if item is in player inventory
+    public boolean checkItem(String itemName){
+        for(Item currentItem: items){
+            if(itemName.equalsIgnoreCase(currentItem.getName())){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    // check item type and will use appropriately
+    public void useItem(Item item){
+        if(item instanceof ConsumableItem){
+            ((ConsumableItem) item).useItem(this);
+        }else if(item instanceof WearItem){
+            WearItem armor = (WearItem) item;
+            equip(armor);
+        }
+    }
+
+    public void equip(WearItem item){
+        System.out.println("Equip or Cancel");
+        String userInput = scanner.nextLine();
+        if(userInput.equalsIgnoreCase("Equip")){
+            item.equipItem(this);
+            addWearableItem(item);
+        }else{
+            // sout("Invalid Selection")
+        }
+    }
+
+    public Item findItem(String itemName){
+        for(Item currentItem : items){
+            if(itemName.equalsIgnoreCase(currentItem.getName())){
+                return currentItem;
+            }
+        }
+        return null;
+    }
 }//EOC
