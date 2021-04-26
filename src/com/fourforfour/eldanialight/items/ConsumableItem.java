@@ -18,7 +18,7 @@ public class ConsumableItem  extends Item{
             case HEALTH:
                 player.setHealth(player.getHealth() + enhancer);
                 break;
-            case DEFENCE:
+            case DEFENSE:
                 player.setDefense(player.getDefense() + enhancer);
                 break;
             case INTELLECT:
