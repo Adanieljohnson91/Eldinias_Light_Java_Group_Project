@@ -5,7 +5,7 @@ import java.util.List;
 public class ItemsOfEldinia {
     public static Item sword = new Item("sword");
     public static Item shield = new Item("shield");
-    public static Item healthPotion = new Item("healthPotion");
+    public static ConsumableItem healthPotion = new ConsumableItem("healthPotion", 10, ItemType.HEALTH);
     public static Item manaPotion = new Item("manaPotion");
     public static Item escapeRope = new Item("escapeRope");
     public static Item battleAxe = new Item("battleAxe");

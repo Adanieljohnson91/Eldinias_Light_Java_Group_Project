@@ -105,4 +105,12 @@ public class Character {
         items.add(item);
     }
 
+    public void useItem(String item){
+        //loog for item in list
+
+        //check if item is a consumable
+
+        //apply to characters stat
+    }
+
 }//EOC

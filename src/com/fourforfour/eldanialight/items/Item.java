@@ -4,9 +4,6 @@ public class Item {
     private String name;
     private int count;
 
-    public Item(){
-
-    }
     public Item(String name) {
         this.setName(name);
         setCount(1);
