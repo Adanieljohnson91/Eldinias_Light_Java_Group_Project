@@ -19,7 +19,7 @@ public class Character {
     List<Item> items = new ArrayList<>();
 
 
-    //PlayerClass playerClass
+
 
 
     //CONSTRUCTOR

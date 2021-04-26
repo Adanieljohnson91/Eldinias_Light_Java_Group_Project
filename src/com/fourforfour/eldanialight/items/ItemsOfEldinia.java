@@ -11,4 +11,5 @@ public class ItemsOfEldinia {
     public static Item battleAxe = new Item("battleAxe");
 
     public static List<Item> armoryList = new ItemList(sword, shield, healthPotion, manaPotion).getList();
+    public static List<Item> magicList = new ItemList(healthPotion, manaPotion).getList();
 }
