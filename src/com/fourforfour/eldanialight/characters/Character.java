@@ -30,14 +30,15 @@ public class Character {
     public Character() {
 
     }
+    //This constructor was to all for original enemy creation
 
     //all args
     public Character(String name, int health, int strength, int defense, int bezos, int intel, int speed) {
 
     }
 
-    public Character(String name, int health, int strength, int defense, int bezos, int speed) {
-    }
+   // public Character(String name, int health, int strength, int defense, int bezos, int speed) {
+    //}
 
 
     public String getName() {
