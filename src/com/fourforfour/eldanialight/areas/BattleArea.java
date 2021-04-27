@@ -8,7 +8,7 @@ import java.util.List;
 
 public class BattleArea extends DangerArea{
     public Enemy enemy;
-    public BattleArea(String name, AreaList areas, List<Command> command,Enemy enemy) {
-        super(name, areas, command);
+    public BattleArea(String name, AreaList areas, List<Command> command,Enemy enemy,AreaInfo areaInfo) {
+        super(name, areas, command,areaInfo);
     }
 }

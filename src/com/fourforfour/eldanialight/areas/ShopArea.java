@@ -11,8 +11,8 @@ public class ShopArea extends SafeArea{
     HashMap<String, Item> items = new HashMap<>();
     public ShopNPC vendor;
 
-    public ShopArea(String name, AreaList areas, List<Command> command, List<Item> itemList, ShopNPC vendor) {
-        super(name, areas, command);
+    public ShopArea(String name, AreaList areas, List<Command> command, List<Item> itemList, ShopNPC vendor,AreaInfo areaInfo) {
+        super(name, areas, command, areaInfo);
         this.vendor = vendor;
         for(Item item: itemList){
             this.items.put(item.getName(), item);

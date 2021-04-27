@@ -5,6 +5,7 @@ public class Enemy extends Character implements BattleActions{
 
     public Enemy(String name, int health, int strength, int defense){
 
+
     }
 
 //    public Enemy(String name, int health, int strength, int defense, int bezos, int speed) {

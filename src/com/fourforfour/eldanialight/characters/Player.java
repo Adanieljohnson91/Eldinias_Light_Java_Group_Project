@@ -29,7 +29,7 @@ public class Player extends Character {
         System.out.println("King: Thank you for coming to aid of Lord Black and the rest of Eldinia!!");
         System.out.println("We must get some information from you  to know how to best help you defeat Tyronious the Black");
 
-        System.out.println("What shall we call you?  :");
+        System.out.println("What shall we call you?:");
          player.setName(myScanner.nextLine());
 
         System.out.println("What style of fighter are you? ex. Mage, Knight,  :");

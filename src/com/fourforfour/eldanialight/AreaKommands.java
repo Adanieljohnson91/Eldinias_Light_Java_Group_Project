@@ -1,5 +1,6 @@
 package com.fourforfour.eldanialight;
 
+import com.fourforfour.eldanialight.areas.AreaInfo;
 import com.fourforfour.eldanialight.areas.ShopArea;
 
 import java.util.ArrayList;
@@ -60,7 +61,7 @@ public class AreaKommands {
                 System.out.println("Selling");
                 break;
             case VIEW:
-                System.out.println("Viewing");
+                Game.currentArea.getAreaInfo();
                 break;
             case LEAVE:
                 System.out.println("Leaving");
