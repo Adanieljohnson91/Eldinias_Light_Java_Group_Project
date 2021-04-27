@@ -4,5 +4,6 @@ public enum ItemType {
     HEALTH,
     DEFENSE,
     INTELLECT,
-    SPEED
+    SPEED,
+    STRENGTH
 }

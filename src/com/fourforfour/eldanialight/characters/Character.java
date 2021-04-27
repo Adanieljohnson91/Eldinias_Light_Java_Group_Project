@@ -17,7 +17,7 @@ public class Character {
     private int intel;
     private int speed;
     private PlayerType playerType;
-    List<Item> items = new ArrayList<>();
+    public List<Item> items = new ArrayList<>();
     List<Item> equipment = new ArrayList<>();
     Scanner scanner = new Scanner(System.in);
 
@@ -117,9 +117,14 @@ public class Character {
     // list items
     public void listItems(){
         for(Item item : items){
-            System.out.println(item.getName());
+            if(items.size() == 0){
+                System.out.println("There is nothing in the inventory");
+            }else{
+                System.out.println(item.getName());
+//                selectItem();
+            }
         }
-        selectItem();
+
     }
 
     // select item
@@ -160,8 +165,9 @@ public class Character {
         if(userInput.equalsIgnoreCase("Equip")){
             item.equipItem(this);
             addWearableItem(item);
+            items.remove(item);
         }else{
-            // sout("Invalid Selection")
+            System.out.println("Cannot equip item");
         }
     }
 
@@ -173,4 +179,12 @@ public class Character {
         }
         return null;
     }
+
+    public void pickUpItem(Item item){
+        String playerAction = scanner.nextLine();
+        if(playerAction.equalsIgnoreCase("Pick up" + item.getName())){
+            items.add(item);
+        }
+    }
+
 }//EOC

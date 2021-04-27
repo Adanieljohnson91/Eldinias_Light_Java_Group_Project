@@ -18,10 +18,9 @@ public class WearItem extends Item{
         character.setHealth(character.getHealth() + health);
         character.setDefense(character.getDefense() + defense);
         character.setStrength(character.getStrength() + attack);
-
     }
 
-    public void unequippedItem(Character character){
+    public void unequipItem(Character character){
         character.setHealth(character.getHealth() - health);
         character.setDefense(character.getDefense() - defense);
         character.setStrength(character.getStrength() - attack);
