@@ -22,6 +22,7 @@ public class World implements WorldAreas  {
         world.put("armory", armory);
         world.put("fire mountain", fire_mountain);
         world.put("castle eldina", castle_eldina);
+        world.put("inner evil forest" , inner_evil_forest);
 
     }
 

@@ -10,12 +10,15 @@ public class Character {
 
     //FIELDS
     private String name;
-    private int health;
+    private double health;
     private int strength;
     private int defense;
     private int bezos;
     private int intel;
     private int speed;
+    private int xp;
+    private double  maxHealth;
+
     private PlayerType playerType;
     List<Item> items = new ArrayList<>();
     List<Item> equipment = new ArrayList<>();
@@ -49,12 +52,12 @@ public class Character {
         this.name = name;
     }
 
-    public int getHealth() {
-        return health;
+    public double getHealth() {
+        return health ;
     }
 
-    public void setHealth(int health) {
-        this.health = health;
+    public void setHealth(double health) {
+       this.health = health;
     }
 
     public int getStrength() {
@@ -70,7 +73,7 @@ public class Character {
     }
 
     public void setDefense(int defense) {
-        this.defense = defense;
+      this.defense = defense;
     }
 
     public int getBezos() {
@@ -103,6 +106,14 @@ public class Character {
 
     public void setPlayerType(PlayerType playerType) {
         this.playerType = playerType;
+    }
+
+    public int getXp() {
+        return xp;
+    }
+
+    public void setXp(int xp) {
+        this.xp = xp;
     }
 
     public void addItem(Item item) {
@@ -172,5 +183,14 @@ public class Character {
             }
         }
         return null;
+    }
+
+
+    public double getMaxHealth() {
+        return maxHealth;
+    }
+
+    public void setMaxHealth(double maxHealth) {
+        this.maxHealth = maxHealth;
     }
 }//EOC

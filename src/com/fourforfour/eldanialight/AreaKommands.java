@@ -1,6 +1,8 @@
 package com.fourforfour.eldanialight;
 
+import com.fourforfour.eldanialight.areas.BattleArea;
 import com.fourforfour.eldanialight.areas.ShopArea;
+import com.fourforfour.eldanialight.battle.BattleSequence;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,14 +20,10 @@ public class AreaKommands {
         shopCommand.add(Command.BUY);
         shopCommand.add(Command.SELL);
         shopCommand.add(Command.LEAVE);
-        shopCommand.add(Command.VENTURE);
         shopCommand.add(Command.VIEW_ITEMS);
 
-        worldCommand.add(Command.GO);
         worldCommand.add(Command.VIEW);
-        worldCommand.add(Command.ACCEPT);
         worldCommand.add(Command.VENTURE);
-        worldCommand.add(Command.IGNORE);
         worldCommand.add(Command.VIEW_ITEMS);
 
         battleCommand.add(Command.ATTACK);
@@ -69,7 +67,10 @@ public class AreaKommands {
                 System.out.println("Accepting");
                 break;
             case ATTACK:
-                System.out.println("Attacking");
+                if(Game.currentArea instanceof BattleArea){
+                    BattleArea area = (BattleArea) Game.currentArea;
+                    area.battle();
+                }
                 break;
             case IGNORE:
                 System.out.println("Ignoring");
