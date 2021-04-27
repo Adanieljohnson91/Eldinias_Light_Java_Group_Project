@@ -24,6 +24,8 @@ public class ConsumableItem  extends Item{
             case INTELLECT:
                 player.setIntel(player.getIntel() + enhancer);
                 break;
+            case STRENGTH:
+                player.setStrength(player.getStrength() + enhancer);
             default:
                 System.out.println("Cant help you...");
         }

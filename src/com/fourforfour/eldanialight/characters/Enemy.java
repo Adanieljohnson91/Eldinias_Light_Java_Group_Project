@@ -7,9 +7,9 @@ public class Enemy extends Character implements BattleActions{
 
     }
 
-    public Enemy(String name, int health, int strength, int defense, int bezos, int speed) {
-        super(name, health, strength, defense, bezos, speed);
-    }
+//    public Enemy(String name, int health, int strength, int defense, int bezos, int speed) {
+//        super(name, health, strength, defense, bezos, speed);
+//    }
 
 
 

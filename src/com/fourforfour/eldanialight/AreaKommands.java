@@ -84,7 +84,7 @@ public class AreaKommands {
                 System.out.println("Closing");
                 break;
             case VIEW_ITEMS:
-                Game.character.listItems();
+                Game.character.viewInventory();
                 break;
             default:
                 System.out.println("Error");
