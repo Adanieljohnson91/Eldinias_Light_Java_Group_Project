@@ -16,10 +16,9 @@ import com.fourforfour.eldanialight.items.ItemsOfEldinia;
 public interface WorldAreas {
 
     Area lucino_town = new SafeArea("lucino town",
-            new AreaList("lucino shops", "carnival", "lucino town hall","lucino front gate"),
-            AreaKommands.shopCommand,AreaInfo.LUCINO_TOWN);
+            new AreaList("lucino shops", "carnival", "lucino town hall"),
+            AreaKommands.worldCommand,AreaInfo.LUCINO_TOWN);
 
-//    //shop areas
     SafeArea lucino_shops = new SafeArea("lucino shops",
             new AreaList("armory", "magic", "inn", "lucino front gate", "lucino town"),
             AreaKommands.worldCommand,AreaInfo.LUCINO_SHOPS);
@@ -28,7 +27,8 @@ public interface WorldAreas {
             new AreaList("lucino shops"),
             AreaKommands.shopCommand,
             ItemsOfEldinia.armoryList,
-            new ShopNPC("Hank", 10, 10, 10, 10, 10, 34, "Welcome to the Armory"),AreaInfo.LUCINO_SHOPS);
+            new ShopNPC("Hank", 10, 10, 10, 10, 10, 34,
+                    "Welcome to the Armory"),AreaInfo.LUCINO_SHOPS);
 
 //    //magic shop
     ShopArea magic = new ShopArea("magic",
@@ -36,7 +36,7 @@ public interface WorldAreas {
             AreaKommands.shopCommand,
             ItemsOfEldinia.magicList,
             new ShopNPC("Hans", 10, 10, 10 ,10, 10, 34, "Welcome to the Magic Shop"),AreaInfo.LUCINO_SHOPS);
-//
+
 //    //TODO: uncommit once Inn list is complete commands for staying done
 //    //inn will need a command to stay at the inn
 ////    ShopArea inn = new ShopArea("inn",
@@ -48,39 +48,30 @@ public interface WorldAreas {
 //    //front gate
     SafeArea lucino_front_gate = new SafeArea("lucino front gate",
             new AreaList("lucino shops", "open world"),
-            AreaKommands.battleCommand,AreaInfo.FRONT_GATE);
+            AreaKommands.worldCommand, AreaInfo.FRONT_GATE);
 
     DangerArea open_world = new DangerArea("open world",
             new AreaList("lucino front gate", "badlands", "evil forest", "fire mountain", "castle eldina"),
-            AreaKommands.shopCommand,AreaInfo.OPEN_WORLD);
+            AreaKommands.worldCommand,AreaInfo.FRONT_GATE);
 
 //    //Evil forest
     DangerArea evil_forest = new DangerArea("evil forest",
             new AreaList("open world", "inner evil forest", "evil forest lair"),
             AreaKommands.worldCommand,AreaInfo.EVIL_FOREST);
-
-    //TODO: uncommit once battle area complete
-
-//    BattleArea inner_evil_forest = new BattleArea("inner evil forest", new AreaList("evil forest", "evil forest lair"),
-//            AreaKommands.battleCommand,
-//            new Enemy("Goblin",50,25,30));
-
+    BattleArea inner_evil_forest = new BattleArea("inner evil forest", new AreaList("evil forest", "evil forest lair"),
+            AreaKommands.battleCommand,
+            new Enemy("Goblin",10,30,5,4,0,10,30),
+            AreaInfo.EVIL_FOREST,"evil forest");
     //badlands
     DangerArea badlands = new DangerArea("badlands",
             new AreaList("open world", "elki town", "fang hill"),
-            AreaKommands.battleCommand,AreaInfo.BADLANDS);
-    //elki town
-//    SafeArea area7 = new SafeArea("elki town",
-//            new AreaList("elki town community area", "open world"),
-//            AreaKommands.battleCommand,A);
+            AreaKommands.worldCommand,AreaInfo.BADLANDS);
     //Mountain
     DangerArea fire_mountain = new DangerArea("fire mountain",
-            new AreaList("open world", "base", "slope", "cave"),
-            AreaKommands.battleCommand,AreaInfo.FIRE_MOUNTAIN);
+            new AreaList("open world", "base", "slope", "cave"), AreaKommands.worldCommand,AreaInfo.FIRE_MOUNTAIN);
     //castle eldina
     DangerArea castle_eldina = new DangerArea("castle eldina",
             new AreaList("open world", "training grounds", "dungeon", "throne room"),
-            AreaKommands.battleCommand,AreaInfo.CASTLE_ELDINA);
-
+            AreaKommands.worldCommand, AreaInfo.CASTLE_ELDINA);
 
 }

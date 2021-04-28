@@ -1,11 +1,11 @@
 package com.fourforfour.eldanialight.characters;
 
 public interface BattleActions {
-    void attack();
+    void attack(Character character);
 
-    void run();
+    boolean run(Character character);
 
-    void defend();
+    int defend();
 
     void use();
 

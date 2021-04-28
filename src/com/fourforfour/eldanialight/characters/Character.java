@@ -11,12 +11,15 @@ public class Character {
 
     //FIELDS
     private String name;
-    private int health;
+    private double health;
     private int strength;
     private int defense;
     private int bezos;
     private int intel;
     private int speed;
+    private int xp;
+    private double  maxHealth;
+
     private PlayerType playerType;
     public List<Item> items = new ArrayList<>();
     List<Item> equipment = new ArrayList<>();
@@ -36,10 +39,6 @@ public class Character {
 
     }
 
-    // public Character(String name, int health, int strength, int defense, int bezos, int speed) {
-    //}
-
-
     public String getName() {
         return name;
     }
@@ -48,12 +47,12 @@ public class Character {
         this.name = name;
     }
 
-    public int getHealth() {
-        return health;
+    public double getHealth() {
+        return health ;
     }
 
-    public void setHealth(int health) {
-        this.health = health;
+    public void setHealth(double health) {
+       this.health = health;
     }
 
     public int getStrength() {
@@ -69,7 +68,7 @@ public class Character {
     }
 
     public void setDefense(int defense) {
-        this.defense = defense;
+      this.defense = defense;
     }
 
     public int getBezos() {
@@ -104,6 +103,14 @@ public class Character {
         this.playerType = playerType;
     }
 
+    public int getXp() {
+        return xp;
+    }
+
+    public void setXp(int xp) {
+        this.xp = xp;
+    }
+
     public void addItem(Item item) {
         items.add(item);
     }
@@ -113,31 +120,30 @@ public class Character {
         equipment.add(item);
     }
 
-    // view inventory
     public void viewInventory() {
+        System.out.println("Enter the item name or back: ");
         System.out.println("***INVENTORY***");
         for (Item item : items) {
             System.out.println(item.getName());
         }
         if (items.size() == 0) {
             System.out.println("There is nothing in the inventory");
+            return;
         }
         System.out.println("****************");
         System.out.println("# of Items in Inventory: " + items.size());
-        selectItem();
     }
 
 
     // select item
     public void selectItem() {
+        viewInventory();
         System.out.println("Which Item would you like to select? ");
         String userInput = scanner.nextLine();
         if (checkItem(userInput)) {
             useItem(findItem(userInput));
         } else if (userInput.equalsIgnoreCase("back")) {
-            {
                 Game.currentArea.printCommands();
-            }
         } else {
             System.out.println("Invalid Selection");
             selectItem();
@@ -159,6 +165,7 @@ public class Character {
     public void useItem(Item item) {
         if (item instanceof ConsumableItem) {
             ((ConsumableItem) item).useItem(this);
+            items.remove(item);
         } else if (item instanceof WearItem) {
             WearItem armor = (WearItem) item;
             equip(armor);
@@ -186,11 +193,18 @@ public class Character {
         return null;
     }
 
+    public double getMaxHealth() {
+        return maxHealth;
+    }
+
+    public void setMaxHealth(double maxHealth) {
+        this.maxHealth = maxHealth;
+    }
+
     public void pickUpItem(Item item) {
         String playerAction = scanner.nextLine();
         if (playerAction.equalsIgnoreCase("Pick up" + item.getName())) {
             items.add(item);
         }
     }
-
 }//EOC

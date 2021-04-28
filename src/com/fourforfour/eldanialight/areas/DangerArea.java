@@ -8,4 +8,5 @@ public class DangerArea extends Area{
     public DangerArea(String name, AreaList areas, List<Command> command,AreaInfo areaInfo) {
         super(name, areas, command,areaInfo);
     }
+
 }
