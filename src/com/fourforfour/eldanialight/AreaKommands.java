@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Area Kommands is a singletonclass that will hold premade command instances for the application
+ * AreaKommands is a singletonclass that will hold premade command instances for the application
  */
 
 public class AreaKommands {
@@ -39,7 +39,6 @@ public class AreaKommands {
                     ShopArea current = (ShopArea) Game.currentArea;
                     current.vendor.barter(current.getItems());
                 }
-                System.out.println("Buying");
                 break;
             case EXIT:
                 System.out.println("Exiting");
