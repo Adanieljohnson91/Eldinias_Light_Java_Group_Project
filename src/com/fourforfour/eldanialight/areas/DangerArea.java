@@ -5,7 +5,8 @@ import com.fourforfour.eldanialight.Command;
 import java.util.List;
 
 public class DangerArea extends Area{
-    public DangerArea(String name, AreaList areas, List<Command> command) {
-        super(name, areas, command);
+    public DangerArea(String name, AreaList areas, List<Command> command,AreaInfo areaInfo) {
+        super(name, areas, command,areaInfo);
     }
+
 }

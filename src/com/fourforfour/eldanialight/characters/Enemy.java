@@ -15,11 +15,6 @@ public class Enemy extends Character implements BattleActions{
        this.setSpeed(speed);
        this.setXp(xp);
     }
-
-
-
-
-
     @Override
     public void attack(Character character) {
         Player player = (Player)character;

@@ -16,15 +16,27 @@ public class Area {
     private AreaList areas;
     private List<Command> command;
     private Scanner scanner = new Scanner(System.in);
+    private AreaInfo areaInfo;
 
     public AreaList getAreas(){
         return this.areas;
     }
 
-    public Area(String name, AreaList areas, List<Command> command){
+    public void getAreaInfo() {
+        System.out.println(areaInfo.getDescription());
+    }
+
+    public String getName() {
+        return name;
+    }
+
+
+    public Area(String name, AreaList areas, List<Command> command,AreaInfo areaInfo){
         this.name = name;
         this.areas = areas;
         this.command = command;
+        this.areaInfo = areaInfo;
+
     }
 
     public void printCommands(){
@@ -37,6 +49,9 @@ public class Area {
         try{
             AreaKommands.commands(Command.valueOf(input));
         }catch(IllegalArgumentException e){
+            if(input.equalsIgnoreCase("exit()")){
+                return;
+            }
             System.out.println("Invalid Command");
         }
     }
@@ -47,6 +62,7 @@ public class Area {
         String destination = scanner.nextLine().toLowerCase(Locale.ROOT);
         if(areas.areaList.contains(destination)){
             Game.currentArea = Game.world.get(destination);
+            System.out.println("You have entered "+ Game.currentArea.getName());
         }else{
             System.out.println("Invalid Entry");
             venture();
@@ -54,7 +70,8 @@ public class Area {
     }
 
     public void viewAreas(){
-        areas.view();
+        System.out.println(Game.currentArea.areaInfo);
+
     }
 
-}
+}//EOC

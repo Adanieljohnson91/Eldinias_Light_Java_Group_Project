@@ -57,10 +57,10 @@ public class AreaKommands {
                 System.out.println("Selling");
                 break;
             case VIEW:
-                System.out.println("Viewing");
+                Game.currentArea.getAreaInfo();
                 break;
             case LEAVE:
-                System.out.println("Leaving");
+                Game.currentArea = Game.world.get("lucino shops");
                 break;
             case ACCEPT:
                 System.out.println("Accepting");

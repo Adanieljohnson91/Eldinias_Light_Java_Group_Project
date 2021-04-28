@@ -7,7 +7,7 @@ import com.fourforfour.eldanialight.areas.WorldAreas;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class World implements WorldAreas  {
+public class World implements WorldAreas {
     HashMap<String, ? super Area> world = new HashMap<>();
     AreaKommands areaKommands = new AreaKommands();
 
@@ -23,10 +23,10 @@ public class World implements WorldAreas  {
         world.put("fire mountain", fire_mountain);
         world.put("castle eldina", castle_eldina);
         world.put("inner evil forest" , inner_evil_forest);
-
+        world.put("magic", magic);
     }
 
-    public Area get(String input){
-        return (Area)world.get(input);
+    public Area get(String input) {
+        return (Area) world.get(input);
     }
 }

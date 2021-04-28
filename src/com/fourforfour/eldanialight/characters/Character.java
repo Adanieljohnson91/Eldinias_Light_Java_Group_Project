@@ -39,10 +39,6 @@ public class Character {
 
     }
 
-    // public Character(String name, int health, int strength, int defense, int bezos, int speed) {
-    //}
-
-
     public String getName() {
         return name;
     }
@@ -124,7 +120,6 @@ public class Character {
         equipment.add(item);
     }
 
-    // view inventory
     public void viewInventory() {
         System.out.println("Enter the item name or back: ");
         System.out.println("***INVENTORY***");
@@ -170,6 +165,7 @@ public class Character {
     public void useItem(Item item) {
         if (item instanceof ConsumableItem) {
             ((ConsumableItem) item).useItem(this);
+            items.remove(item);
         } else if (item instanceof WearItem) {
             WearItem armor = (WearItem) item;
             equip(armor);

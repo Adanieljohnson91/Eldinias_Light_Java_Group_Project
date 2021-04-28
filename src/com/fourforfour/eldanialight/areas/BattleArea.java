@@ -11,8 +11,8 @@ public class BattleArea extends DangerArea{
     public Enemy enemy;
     private String previousArea;
     private BattleSequence battleSequence;
-    public BattleArea(String name, AreaList areas, List<Command> command,Enemy enemy, String previousArea) {
-        super(name, areas, command);
+    public BattleArea(String name, AreaList areas, List<Command> command,Enemy enemy, AreaInfo areaInfo, String previousArea) {
+        super(name, areas, command, areaInfo);
         battleSequence = new BattleSequence(enemy);
         this.previousArea = previousArea;
     }
@@ -31,5 +31,6 @@ public class BattleArea extends DangerArea{
 
     public void showEnemy(){
         System.out.println( "Current enemy is :" +this.enemy.getName());
+
     }
 }
