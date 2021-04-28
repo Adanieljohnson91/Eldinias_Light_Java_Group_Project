@@ -17,7 +17,11 @@ public class BattleArea extends DangerArea{
         this.previousArea = previousArea;
     }
 
+    /**
+     * Band aid- Reviving enemy needs to be pulled out... also, may be wise to create an enemy generator.
+     */
     public void battle(){
+        enemy = new Enemy("Goblin", 10, 2, 3,4,5,34,43);
         battleSequence.battle();
     }
 

@@ -5,8 +5,6 @@ import com.fourforfour.eldanialight.battle.Utility;
 
 public class Enemy extends Character implements BattleActions{
 
-
-
     public Enemy(String name,double health, int defense, int strength, int speed,int intel, int bezos ,int xp){
        this.setName(name);
        this.setHealth(health);

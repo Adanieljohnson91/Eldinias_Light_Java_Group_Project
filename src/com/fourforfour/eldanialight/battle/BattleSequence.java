@@ -53,7 +53,7 @@ public class BattleSequence {
                     attack();
                     break;
                 case "use item":
-                    Game.character.listItems();
+                    Game.character.selectItem();
                     break;
                 case "run":
                    run();
