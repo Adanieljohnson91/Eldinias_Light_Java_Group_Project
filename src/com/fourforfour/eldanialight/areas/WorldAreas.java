@@ -20,7 +20,7 @@ public interface WorldAreas {
 
     Area lucino_town = new SafeArea("lucino town",
             new AreaList("lucino shops", "carnival", "lucino town hall"),
-            AreaKommands.shopCommand);
+            AreaKommands.worldCommand);
 
     //shop areas
     SafeArea lucino_shops = new SafeArea("lucino shops",
@@ -52,11 +52,11 @@ public interface WorldAreas {
     //front gate
     SafeArea lucino_front_gate = new SafeArea("lucino front gate",
             new AreaList("lucino shops", "open world"),
-            AreaKommands.battleCommand);
+            AreaKommands.worldCommand);
 
     DangerArea open_world = new DangerArea("open world",
             new AreaList("lucino front gate", "badlands", "evil forest", "fire mountain", "castle eldina"),
-            AreaKommands.shopCommand);
+            AreaKommands.worldCommand);
 
     //Evil forest
     DangerArea evil_forest = new DangerArea("evil forest",
@@ -65,12 +65,12 @@ public interface WorldAreas {
 
     BattleArea inner_evil_forest = new BattleArea("inner evil forest", new AreaList("evil forest", "evil forest lair"),
             AreaKommands.battleCommand,
-            new Enemy("Goblin",50,25,30));
+            new Enemy("Goblin",50,30,25,40,0,10,30),"evil forest");
 
     //badlands
     DangerArea badlands = new DangerArea("badlands",
             new AreaList("open world", "elki town", "fang hill"),
-            AreaKommands.battleCommand);
+            AreaKommands.worldCommand);
     //elki town
     SafeArea area7 = new SafeArea("elki town",
             new AreaList("elki town community area", "open world"),
@@ -78,11 +78,11 @@ public interface WorldAreas {
     //Mountain
     DangerArea fire_mountain = new DangerArea("fire mountain",
             new AreaList("open world", "base", "slope", "cave"),
-            AreaKommands.battleCommand);
+            AreaKommands.worldCommand);
     //castle eldina
     DangerArea castle_eldina = new DangerArea("castle eldina",
             new AreaList("open world", "training grounds", "dungeon", "throne room"),
-            AreaKommands.battleCommand);
+            AreaKommands.worldCommand);
 
 
 }

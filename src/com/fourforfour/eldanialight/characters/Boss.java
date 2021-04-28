@@ -1,39 +1,36 @@
 package com.fourforfour.eldanialight.characters;
 
-public class Boss extends Character implements BattleActions {
-    public Boss(){ }
+public class Boss extends Character  {
 
-    public Boss(String name, int health, int strength, int speed){
+    public Boss(String name, double health, int defense, int strength, int speed,int intel, int bezos ,int xp){
         this.setName(name);
         this.setHealth(health);
-        this.setStrength(strength);
-        this.setSpeed(speed);
-    }
-    public Boss(String name,int health, int strength, int speed,int intel){
-        this.setName(name);
-        this.setHealth(health);
+        this.setDefense(defense);
         this.setStrength(strength);
         this.setSpeed(speed);
         this.setIntel(intel);
+        this.setBezos(bezos);
+        this.setXp(xp);
     }
 
-    @Override
-    public void attack() {
-
-    }
-
-    @Override
-    public void run() {
-
-    }
-
-    @Override
-    public void defend() {
-
-    }
-
-    @Override
-    public void use() {
-
-    }
+//    @Override
+//    public int attack() {
+//
+//        return 0;
+//    }
+//
+//    @Override
+//    public void run() {
+//
+//    }
+//
+//    @Override
+//    public void defend() {
+//
+//    }
+//
+//    @Override
+//    public void use() {
+//
+//    }
 }//EOC
