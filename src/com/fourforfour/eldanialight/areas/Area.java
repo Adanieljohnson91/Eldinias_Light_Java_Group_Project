@@ -34,13 +34,11 @@ public class Area {
     }
 
     public void commands(String input){
-        if(command.contains(Command.valueOf(input))){
+        try{
             AreaKommands.commands(Command.valueOf(input));
-            return;
+        }catch(IllegalArgumentException e){
+            System.out.println("Invalid Command");
         }
-        System.out.println("ERROR: Please input the following: ");
-        printCommands();
-
     }
 
     public void venture(){

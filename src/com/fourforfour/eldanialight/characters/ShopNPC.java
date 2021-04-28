@@ -40,6 +40,7 @@ public class ShopNPC extends Character implements InteractActions {
                 System.out.println("Excellent Choice traveler: +1 " + selectedItem);
                 Game.character.addItem(items.get(selectedItem));
             }else{
+                System.out.println("Sorry traveler, we don't have that here: " + selectedItem);
                 barter(items);
             }
         }else if(input.equalsIgnoreCase("SELL")){

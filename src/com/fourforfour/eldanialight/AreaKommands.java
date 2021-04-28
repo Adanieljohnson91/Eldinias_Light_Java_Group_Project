@@ -17,8 +17,7 @@ public class AreaKommands {
     public static List<Command>  battleCommand = new ArrayList<>();
 
     AreaKommands(){
-        shopCommand.add(Command.BUY);
-        shopCommand.add(Command.SELL);
+        shopCommand.add(Command.SHOP);
         shopCommand.add(Command.LEAVE);
         shopCommand.add(Command.VIEW_ITEMS);
 
@@ -35,7 +34,7 @@ public class AreaKommands {
 
     public static void commands(Command c){
         switch (c){
-            case BUY:
+            case SHOP:
                 if(Game.currentArea instanceof ShopArea){
                     ShopArea current = (ShopArea) Game.currentArea;
                     current.vendor.barter(current.getItems());

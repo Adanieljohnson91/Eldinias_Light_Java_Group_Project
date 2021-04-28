@@ -15,5 +15,6 @@ public enum Command {
     LEAVE,
     VENTURE,
     ITEM,
-    VIEW_ITEMS
+    VIEW_ITEMS,
+    SHOP
 }
