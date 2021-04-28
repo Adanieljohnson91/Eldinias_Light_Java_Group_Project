@@ -50,9 +50,10 @@ public interface WorldAreas {
             new AreaList("lucino shops", "open world"),
             AreaKommands.worldCommand, AreaInfo.FRONT_GATE);
 
+     //Open World
     DangerArea open_world = new DangerArea("open world",
             new AreaList("lucino front gate", "badlands", "evil forest", "fire mountain", "castle eldina"),
-            AreaKommands.worldCommand,AreaInfo.FRONT_GATE);
+            AreaKommands.worldCommand,AreaInfo.OPEN_WORLD);
 
 //    //Evil forest
     DangerArea evil_forest = new DangerArea("evil forest",
@@ -61,17 +62,55 @@ public interface WorldAreas {
     BattleArea inner_evil_forest = new BattleArea("inner evil forest", new AreaList("evil forest", "evil forest lair"),
             AreaKommands.battleCommand,
             new Enemy("Goblin",10,30,5,4,0,10,30),
-            AreaInfo.EVIL_FOREST,"evil forest");
-    //badlands
+            AreaInfo.INNER_EVIL_FOREST,"evil forest");
+    BattleArea evil_forest_lair = new BattleArea("inner evil forest", new AreaList("evil forest", "inner evil forest "),
+            AreaKommands.battleCommand,
+            new Enemy("Giant",10,30,5,4,0,10,30),
+            AreaInfo.EVIL_FOREST_LAIR,"evil forest");
+
+    //Badlands
     DangerArea badlands = new DangerArea("badlands",
             new AreaList("open world", "elki town", "fang hill"),
             AreaKommands.worldCommand,AreaInfo.BADLANDS);
+    Area elki_town = new SafeArea("elki town",
+            new AreaList("badlands", "fang hill"),
+            AreaKommands.worldCommand,AreaInfo.ELKI_TOWN);
+    BattleArea fang_hill = new BattleArea("fang hill", new AreaList("badlands", "elki town"),
+            AreaKommands.battleCommand,
+            new Enemy("Wolf",10,30,5,4,0,10,30),
+            AreaInfo.FANG_HILL,"fang hill");
+
+
     //Mountain
     DangerArea fire_mountain = new DangerArea("fire mountain",
-            new AreaList("open world", "base", "slope", "cave"), AreaKommands.worldCommand,AreaInfo.FIRE_MOUNTAIN);
+            new AreaList("open world", "base", "cave"), AreaKommands.worldCommand,AreaInfo.FIRE_MOUNTAIN);
+    BattleArea base = new BattleArea("base", new AreaList("fire mountain", "cave"),
+            AreaKommands.battleCommand,
+            new Enemy("Troll",10,30,5,4,0,10,30),
+            AreaInfo.BASE,"fang hill");
+    BattleArea cave = new BattleArea("cave", new AreaList("fire mountain", "base"),
+            AreaKommands.battleCommand,
+            new Enemy("Dragon",10,30,5,4,0,10,30),
+            AreaInfo.CAVE,"fang hill");
+
+
+
     //castle eldina
     DangerArea castle_eldina = new DangerArea("castle eldina",
             new AreaList("open world", "training grounds", "dungeon", "throne room"),
             AreaKommands.worldCommand, AreaInfo.CASTLE_ELDINA);
+    SafeArea training_grounds = new SafeArea("training grounds",
+            new AreaList("armory", "magic", "castle eldina","dungeon","throne room"),
+            AreaKommands.worldCommand,AreaInfo.TRAINING_GROUNDS);
+
+    BattleArea dungeon = new BattleArea("dungeon", new AreaList("training grounds", "castle eldina","throne room"),
+            AreaKommands.battleCommand,
+            new Enemy("undead",10,30,5,4,0,10,30),
+            AreaInfo.DUNGEON,"fang hill");
+    BattleArea throne_room = new BattleArea("throne room", new AreaList("castle eldina", "dungeon","training grounds"),
+            AreaKommands.battleCommand,
+            new Enemy("Warlock",10,30,5,4,0,10,30),
+            AreaInfo.THRONE_ROOM,"fang hill");
+
 
 }
