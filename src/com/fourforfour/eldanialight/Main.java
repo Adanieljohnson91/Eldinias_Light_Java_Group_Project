@@ -18,6 +18,19 @@ public class Main {
         // 2.) Thread to start intro story?
         Game game = new Game(Player.createPlayer());
         String inputString = "";
+        SimpleAudioPlayer audioPlayer;
+        try{
+            System.out.println("Running media");
+            String filePath = "src/com/fourforfour/eldanialight/fairymusic.wav";
+            audioPlayer = new SimpleAudioPlayer(filePath);
+            audioPlayer.play();
+
+        }catch(Exception e){
+            System.out.println(e.getMessage());
+        }
+
+
+
         while (true) {
             //Invalid entry should result in list of valid entries
             //Game is always taking in commands play is the master controller.
