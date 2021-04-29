@@ -41,7 +41,9 @@ public class Area {
 
     public void printCommands(){
         for(Command cmd : command){
-            System.out.println(cmd);
+            String c = cmd.toString();
+            c = c.replace("_", " ");
+            System.out.println(c);
         }
     }
 

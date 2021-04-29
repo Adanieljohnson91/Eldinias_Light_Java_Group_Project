@@ -21,6 +21,11 @@ public class Game {
     }
 
     public void play(String input) {
+        input = input.trim();
+        String[] inputs = input.split(" ");
+        if(inputs.length > 1){
+            input = String.join("_", inputs);
+        }
         currentArea.commands(input);
     }
 
