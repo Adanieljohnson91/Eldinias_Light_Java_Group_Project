@@ -28,6 +28,18 @@ public class EnemyGenerator {
             case DESERT:
                 result = new Enemy("Sand Golem", 12, 21, 12, 2, 21 ,12, 10);
                 break;
+            case GIANT:
+                //RANDOM NUM GENERATOR
+                //RETURN GIANT_MONSTER_ARRAY[INDEX_RANDOM]
+                //MAY NEED SEPERATE SWITCH FOR EACH ENEMY...
+                result = new Enemy("Sand Golem", 12, 21, 12, 2, 21 ,12, 10);
+                break;
+            case DRAGON:
+                result = new Enemy("Sand Golem", 12, 21, 12, 2, 21 ,12, 10);
+                break;
+            case WARLOCK:
+                result = new Enemy("Sand Golem", 12, 21, 12, 2, 21 ,12, 10);
+                break;
             default:
                 result = new Enemy("Unknown Enemy", 999, 999, 999, 999, 999 ,999, 99999);
         }

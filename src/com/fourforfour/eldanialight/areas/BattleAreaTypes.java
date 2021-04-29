@@ -5,5 +5,8 @@ public enum BattleAreaTypes {
     FIRE,
     MOUNTAINS,
     SKY,
-    DARK
+    DARK,
+    DRAGON,
+    GIANT,
+    WARLOCK
 }
