@@ -34,7 +34,7 @@ public class Player extends Character implements BattleActions {
         Player player = new Player();
         Scanner myScanner = new Scanner(System.in);
 
-        System.out.println("King: Thank you for coming to aid of Lord Black and the rest of Eldinia!!");
+        System.out.println("Welcome brave hero and  you for coming to aid of  of Eldinia!!");
         System.out.println("We must get some information from you  to know how to best help you defeat Tyronious the Black");
 
         System.out.println("What shall we call you?:");

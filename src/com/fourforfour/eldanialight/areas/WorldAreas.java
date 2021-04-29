@@ -20,7 +20,7 @@ public interface WorldAreas {
             AreaKommands.worldCommand,AreaInfo.LUCINO_TOWN);
 
     SafeArea lucino_shops = new SafeArea("lucino shops",
-            new AreaList("armory", "magic", "inn", " front gate", "lucino town"),
+            new AreaList("armory", "magic", "inn", "front gate", "lucino town"),
             AreaKommands.worldCommand,AreaInfo.LUCINO_SHOPS);
     //armory
     ShopArea armory = new ShopArea("armory",
@@ -46,13 +46,13 @@ public interface WorldAreas {
 ////            new ShopNPC("Ryia", 10, 10, 10 ,10, 10, 34, "Welcome to the Inn will you be staying with us "));
 //
 //    //front gate
-    SafeArea front_gate = new SafeArea("lucino front gate",
+    SafeArea front_gate = new SafeArea("front gate",
             new AreaList("lucino shops", "open world"),
             AreaKommands.worldCommand, AreaInfo.FRONT_GATE);
 
      //Open World
     DangerArea open_world = new DangerArea("open world",
-            new AreaList("lucino front gate", "badlands", "evil forest", "fire mountain", "castle eldina"),
+            new AreaList(" front gate", "badlands", "evil forest", "fire mountain", "castle eldina"),
             AreaKommands.worldCommand,AreaInfo.OPEN_WORLD);
 
 //    //Evil forest
