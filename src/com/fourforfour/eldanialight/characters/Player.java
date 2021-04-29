@@ -27,12 +27,10 @@ public class Player extends Character implements BattleActions {
         // create PlayerName
         System.out.println("What shall we call you?:");
         player.setName(scanner.nextLine());
-            player.setPlayerType(createPlayerClass());
-
+        player.setPlayerType(createPlayerClass());
         player.setHealth(50);
         player.setXp(0);
         player.setBezos(50);
-
         switch (player.getPlayerType()) {
             case MAGE:
                 player.setStrength(10);
@@ -55,8 +53,6 @@ public class Player extends Character implements BattleActions {
             default:
                 System.out.println("You have entered an invalid type");
         }
-
-
         System.out.println("Welcome " + player.getName() + " the " + player.getPlayerType() + ".");
         return player;
 
