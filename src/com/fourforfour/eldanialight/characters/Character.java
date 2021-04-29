@@ -130,17 +130,17 @@ public class Character {
     }
 
     public void viewInventory() {
-        System.out.println("Enter the item name or back: ");
-        System.out.println("***INVENTORY***");
+        System.out.println("\nEnter the item name or back: ");
+        System.out.println("\n***INVENTORY***");
+
         for (Item item : items) {
             System.out.println(item.getName());
         }
         if (items.size() == 0) {
             System.out.println("There is nothing in the inventory");
-            return;
         }
         System.out.println("****************");
-        System.out.println("# of Items in Inventory: " + items.size());
+        System.out.println("# of Items in Inventory: " + items.size() + "\n");
     }
 
 

@@ -11,57 +11,30 @@ import java.util.Scanner;
 public class Player extends Character implements BattleActions {
 
     private List<Quest> questLog = new ArrayList<>();
+    private static Scanner scanner = new Scanner(System.in);
     int maxLevel = 20;
     int levelUpXp = 100;
-
-
-
-    public Player(String name, double health, int defense, int strength, int speed,int intel, int bezos,  int xp, double maxHealth,int level, List<Quest> questLog) {
-        this.setName(name);
-        this.setHealth(health);
-        this.setDefense(defense);
-        this.setStrength(strength);
-        this.setSpeed(speed);
-        this.setIntel(intel);
-        this.setBezos(bezos);
-        this.setXp(xp);
-        this.questLog = questLog;
-        this.setMaxHealth(maxHealth);
-        this.setLevel(level);
-    }
-
     public Player() {
 
     }
     // The User is given task of creating their in game player. They are given the option to choose what type of
     //player they will create
 
-    public static Player createPlayer(){
+    public static Player createPlayer() {
         Player player = new Player();
-        Scanner myScanner = new Scanner(System.in);
 
+        //create intro
         System.out.println("King: Thank you for coming to aid of Lord Black and the rest of Eldinia!!");
         System.out.println("We must get some information from you  to know how to best help you defeat Tyronious the Black");
 
+        // create PlayerName
         System.out.println("What shall we call you?:");
-         player.setName(myScanner.nextLine());
-
-        System.out.println("What style of fighter are you? ex. Mage, Knight, Archer  :");
-         player.setPlayerType(PlayerType.valueOf(myScanner.nextLine().toUpperCase(Locale.ROOT)));
-
+        player.setName(scanner.nextLine());
+        player.setPlayerType(createPlayerClass());
         player.setHealth(50);
         player.setXp(0);
         player.setBezos(50);
-        player.setLevel(1);
-
-
-        switch (player.getPlayerType()){
-
-
-            /*
-             * Each player type will be given initial stats
-             * Each PlayerType is given  60 points toward initial strength,speed, and intel
-             */
+        switch (player.getPlayerType()) {
             case MAGE:
                 player.setStrength(10);
                 player.setSpeed(20);
@@ -83,25 +56,31 @@ public class Player extends Character implements BattleActions {
             default:
                 System.out.println("You have entered an invalid type");
         }
-
-
         System.out.println("Welcome " + player.getName() + " the " + player.getPlayerType() + ".");
         return player;
 
     }
 
-    public void addToQuestLog(Quest quest){
-     questLog.add(quest);
-
+    public static PlayerType createPlayerClass(){
+        System.out.println("What style of fighter are you?");
+        String userInput = scanner.next();
+        PlayerType chosenClass;
+        try{
+            chosenClass = PlayerType.valueOf(userInput.toUpperCase(Locale.ROOT));
+            return chosenClass;
+        }catch (IllegalArgumentException e){
+            System.out.println("Invalid");
+            return createPlayerClass();
+        }
     }
 
     @Override
     public void attack(Character character) {
         Enemy enemy = (Enemy) character;
-        double attackingPower = (this.getStrength()+this.getSpeed())* Utility.randomNumber();
-        double defendingPower = enemy.defend()*Utility.randomNumber();
+        double attackingPower = (this.getStrength() + this.getSpeed()) * Utility.randomNumber();
+        double defendingPower = enemy.defend() * Utility.randomNumber();
 
-        if(attackingPower>defendingPower) {
+        if (attackingPower > defendingPower) {
             enemy.setHealth(enemy.getHealth() - (attackingPower - defendingPower));
         }
     }
@@ -109,11 +88,7 @@ public class Player extends Character implements BattleActions {
     @Override
     public boolean run(Character character) {
         Enemy enemy = (Enemy) character;
-        if((this.getSpeed()*Utility.randomNumber()) > (enemy.getSpeed()*Utility.randomNumber())){
-         return true;
-       } else {
-           return false;
-       }
+        return (this.getSpeed() * Utility.randomNumber()) > (enemy.getSpeed() * Utility.randomNumber());
     }
 
     @Override
