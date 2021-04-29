@@ -16,14 +16,15 @@ public class Main {
         //When the game is started we will have to
         // 1.) Create our character (Should this be like a menu? Can we clear the screen on each selection?
         // 2.) Thread to start intro story?
+
         Game game = new Game(Player.createPlayer());
         String inputString = "";
-        SimpleAudioPlayer audioPlayer;
+//        SimpleAudioPlayer audioPlayer;
         try{
             System.out.println("Running media");
-            String filePath = "src/com/fourforfour/eldanialight/fairymusic.wav";
-            audioPlayer = new SimpleAudioPlayer(filePath);
-            audioPlayer.play();
+//            String filePath = "src/com/fourforfour/eldanialight/fairymusic.wav";
+//            audioPlayer = new SimpleAudioPlayer(filePath);
+//            audioPlayer.play();
 
         }catch(Exception e){
             System.out.println(e.getMessage());

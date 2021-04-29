@@ -11,9 +11,9 @@ import java.util.Scanner;
 public class Player extends Character implements BattleActions {
 
     private List<Quest> questLog = new ArrayList<>();
+    private static Scanner scanner = new Scanner(System.in);
 
-
-    public Player(String name, double health, int defense, int strength, int speed,int intel, int bezos,  int xp, double maxHealth, List<Quest> questLog) {
+    public Player(String name, double health, int defense, int strength, int speed, int intel, int bezos, int xp, double maxHealth, List<Quest> questLog) {
         this.setName(name);
         this.setHealth(health);
         this.setDefense(defense);
@@ -30,24 +30,31 @@ public class Player extends Character implements BattleActions {
 
     }
 
-    public static Player createPlayer(){
+    public static Player createPlayer() {
         Player player = new Player();
-        Scanner myScanner = new Scanner(System.in);
 
-        System.out.println("Welcome brave hero and  you for coming to aid of  of Eldinia!!");
+        //create intro
+        System.out.println("King: Thank you for coming to aid of Lord Black and the rest of Eldinia!!");
         System.out.println("We must get some information from you  to know how to best help you defeat Tyronious the Black");
 
+        // create PlayerName
         System.out.println("What shall we call you?:");
-         player.setName(myScanner.nextLine());
+        player.setName(scanner.nextLine());
 
-        System.out.println("What style of fighter are you? ex. Mage, Knight,  :");
-         player.setPlayerType(PlayerType.valueOf(myScanner.nextLine().toUpperCase(Locale.ROOT)));
+        // createPlayerType
+//        System.out.println("What style of fighter are you? ex. Mage, Knight,  :");
+//        player.setPlayerType(PlayerType.valueOf(myScanner.nextLine().toUpperCase(Locale.ROOT)));
+
+            player.setPlayerType(createPlayerClass());
+
+
+//        createPlayerClass(player);
 
         player.setHealth(50);
         player.setXp(0);
         player.setBezos(50);
 
-        switch (player.getPlayerType()){
+        switch (player.getPlayerType()) {
             case MAGE:
                 player.setStrength(10);
                 player.setSpeed(20);
@@ -76,18 +83,35 @@ public class Player extends Character implements BattleActions {
 
     }
 
-    public void addToQuestLog(Quest quest){
-     questLog.add(quest);
+    public static PlayerType createPlayerClass(){
+        // ask user what class they want to play
+        System.out.println("What style of fighter are you?");
+        PlayerType chosenClass = null;
+        // store user input
+        String userInput = scanner.next();
+        try{
+            chosenClass = PlayerType.valueOf(userInput);
+            return chosenClass;
+        }catch (IllegalArgumentException e){
+            System.out.println("Invalid");
+            return createPlayerClass();
+        }
+        // iterate over PlayerType Enum
+//        return chosenClass;
+    }
+
+    public void addToQuestLog(Quest quest) {
+        questLog.add(quest);
 
     }
 
     @Override
     public void attack(Character character) {
         Enemy enemy = (Enemy) character;
-        double attackingPower = (this.getStrength()+this.getSpeed())* Utility.randomNumber();
-        double defendingPower = enemy.defend()*Utility.randomNumber();
+        double attackingPower = (this.getStrength() + this.getSpeed()) * Utility.randomNumber();
+        double defendingPower = enemy.defend() * Utility.randomNumber();
 
-        if(attackingPower>defendingPower) {
+        if (attackingPower > defendingPower) {
             enemy.setHealth(enemy.getHealth() - (attackingPower - defendingPower));
         }
     }
@@ -95,11 +119,11 @@ public class Player extends Character implements BattleActions {
     @Override
     public boolean run(Character character) {
         Enemy enemy = (Enemy) character;
-        if((this.getSpeed()*Utility.randomNumber()) > (enemy.getSpeed()*Utility.randomNumber())){
-         return true;
-       } else {
-           return false;
-       }
+        if ((this.getSpeed() * Utility.randomNumber()) > (enemy.getSpeed() * Utility.randomNumber())) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     @Override
@@ -112,7 +136,7 @@ public class Player extends Character implements BattleActions {
 
     }
 
-    public void revive(){
+    public void revive() {
 
     }
 }//EOC
