@@ -20,7 +20,7 @@ public interface WorldAreas {
             AreaKommands.worldCommand,AreaInfo.LUCINO_TOWN);
 
     SafeArea lucino_shops = new SafeArea("lucino shops",
-            new AreaList("armory", "magic", "inn", "lucino front gate", "lucino town"),
+            new AreaList("armory", "magic", "inn", " front gate", "lucino town"),
             AreaKommands.worldCommand,AreaInfo.LUCINO_SHOPS);
     //armory
     ShopArea armory = new ShopArea("armory",
@@ -46,7 +46,7 @@ public interface WorldAreas {
 ////            new ShopNPC("Ryia", 10, 10, 10 ,10, 10, 34, "Welcome to the Inn will you be staying with us "));
 //
 //    //front gate
-    SafeArea lucino_front_gate = new SafeArea("lucino front gate",
+    SafeArea front_gate = new SafeArea("lucino front gate",
             new AreaList("lucino shops", "open world"),
             AreaKommands.worldCommand, AreaInfo.FRONT_GATE);
 
@@ -61,12 +61,10 @@ public interface WorldAreas {
             AreaKommands.worldCommand,AreaInfo.EVIL_FOREST);
     BattleArea inner_evil_forest = new BattleArea("inner evil forest", new AreaList("evil forest", "evil forest lair"),
             AreaKommands.battleCommand,
-            new Enemy("Goblin",10,30,5,4,0,10,30),
-            AreaInfo.INNER_EVIL_FOREST,"evil forest");
+            AreaInfo.INNER_EVIL_FOREST,"evil forest",BattleAreaTypes.DARK);
     BattleArea evil_forest_lair = new BattleArea("inner evil forest", new AreaList("evil forest", "inner evil forest "),
             AreaKommands.battleCommand,
-            new Enemy("Giant",10,30,5,4,0,10,30),
-            AreaInfo.EVIL_FOREST_LAIR,"evil forest");
+            AreaInfo.EVIL_FOREST_LAIR,"evil forest",BattleAreaTypes.DARK);
 
     //Badlands
     DangerArea badlands = new DangerArea("badlands",
@@ -77,8 +75,7 @@ public interface WorldAreas {
             AreaKommands.worldCommand,AreaInfo.ELKI_TOWN);
     BattleArea fang_hill = new BattleArea("fang hill", new AreaList("badlands", "elki town"),
             AreaKommands.battleCommand,
-            new Enemy("Wolf",10,30,5,4,0,10,30),
-            AreaInfo.FANG_HILL,"fang hill");
+            AreaInfo.FANG_HILL,"fang hill",BattleAreaTypes.DESERT);
 
 
     //Mountain
@@ -86,12 +83,10 @@ public interface WorldAreas {
             new AreaList("open world", "base", "cave"), AreaKommands.worldCommand,AreaInfo.FIRE_MOUNTAIN);
     BattleArea base = new BattleArea("base", new AreaList("fire mountain", "cave"),
             AreaKommands.battleCommand,
-            new Enemy("Troll",10,30,5,4,0,10,30),
-            AreaInfo.BASE,"fang hill");
+            AreaInfo.BASE,"base",BattleAreaTypes.MOUNTAINS);
     BattleArea cave = new BattleArea("cave", new AreaList("fire mountain", "base"),
             AreaKommands.battleCommand,
-            new Enemy("Dragon",10,30,5,4,0,10,30),
-            AreaInfo.CAVE,"fang hill");
+            AreaInfo.CAVE,"cave",BattleAreaTypes.FIRE);
 
 
 
@@ -105,12 +100,11 @@ public interface WorldAreas {
 
     BattleArea dungeon = new BattleArea("dungeon", new AreaList("training grounds", "castle eldina","throne room"),
             AreaKommands.battleCommand,
-            new Enemy("undead",10,30,5,4,0,10,30),
-            AreaInfo.DUNGEON,"fang hill");
+
+            AreaInfo.DUNGEON,"dungeon",BattleAreaTypes.DARK);
     BattleArea throne_room = new BattleArea("throne room", new AreaList("castle eldina", "dungeon","training grounds"),
             AreaKommands.battleCommand,
-            new Enemy("Warlock",10,30,5,4,0,10,30),
-            AreaInfo.THRONE_ROOM,"fang hill");
+            AreaInfo.THRONE_ROOM,"throne room",BattleAreaTypes.DARK);
 
 
 }
