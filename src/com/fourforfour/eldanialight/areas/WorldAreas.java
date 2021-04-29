@@ -20,7 +20,7 @@ public interface WorldAreas {
             AreaKommands.worldCommand,AreaInfo.LUCINO_TOWN);
 
     SafeArea lucino_shops = new SafeArea("lucino shops",
-            new AreaList("armory", "magic", "inn", " front gate", "lucino town"),
+            new AreaList("armory", "magic", "inn", "front gate", "lucino town"),
             AreaKommands.worldCommand,AreaInfo.LUCINO_SHOPS);
     //armory
     ShopArea armory = new ShopArea("armory",

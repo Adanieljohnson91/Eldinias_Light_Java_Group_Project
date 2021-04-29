@@ -15,7 +15,7 @@ public class BattleArea extends DangerArea{
 
     public BattleArea(String name, AreaList areas, List<Command> command, AreaInfo areaInfo, String previousArea, BattleAreaTypes battleAreaType) {
         super(name, areas, command, areaInfo);
-        battleSequence = new BattleSequence(EnemyGenerator.generate(battleAreaType));
+        battleSequence = new BattleSequence(battleAreaType);
         this.previousArea = previousArea;
         this.battleAreaType = battleAreaType;
     }
