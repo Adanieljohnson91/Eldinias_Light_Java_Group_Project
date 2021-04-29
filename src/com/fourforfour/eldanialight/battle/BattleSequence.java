@@ -2,6 +2,8 @@ package com.fourforfour.eldanialight.battle;
 
 import com.fourforfour.eldanialight.Game;
 import com.fourforfour.eldanialight.areas.BattleArea;
+import com.fourforfour.eldanialight.areas.BattleAreaTypes;
+import com.fourforfour.eldanialight.areas.EnemyGenerator;
 import com.fourforfour.eldanialight.characters.*;
 import com.fourforfour.eldanialight.Main;
 import com.fourforfour.eldanialight.characters.Character;
@@ -14,17 +16,20 @@ public class BattleSequence {
 
     Scanner myScanner = new Scanner(System.in);
     Enemy enemy;
+    BattleAreaTypes battleAreaTypes;
     private boolean stillFighting = true;
 //use Game.currentPlayer to access the player in the game
 // make attack method and check to see if the character that got attacked is still alive
 //
-    public BattleSequence(Enemy enemy){
-        this.enemy=enemy;
+    public BattleSequence(BattleAreaTypes battleAreaTypes){
+        this.battleAreaTypes = battleAreaTypes;
+        this.enemy= EnemyGenerator.generate(battleAreaTypes);
     }
 
     public void battle(){
-    battleChoice();
-    System.out.println("");
+        if(enemy.getHealth() < 1) enemy = EnemyGenerator.generate(battleAreaTypes);
+        battleChoice();
+        System.out.println("");
 
     }
 
