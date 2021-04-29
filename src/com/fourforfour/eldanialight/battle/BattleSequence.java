@@ -109,12 +109,13 @@ public class BattleSequence {
         Game.character.setXp((Game.character.getXp())+this.enemy.getXp());
         Game.character.setBezos((Game.character.getBezos())+ this.enemy.getBezos());
         System.out.println("You have defeated " + this.enemy.getName());
-        System.out.println("You have earned " +Game.character.getXp() + "XP and " + Game.character.getBezos() + " Bezos");
+        System.out.println("You have earned " + this.enemy.getXp() + "XP and " + this.enemy.getBezos() + " Bezos");
 
 
        BattleArea area = (BattleArea) Game.currentArea;
         System.out.println("You will be returning to " + area.getPreviousArea());
         Game.currentArea = Game.world.get(area.getPreviousArea());
+        Game.character.addXp();
                 stillFighting = false;
     }
 
@@ -126,13 +127,5 @@ public class BattleSequence {
         stillFighting = false;
 
     }
-//  //  public void setStats(){
-//
-//        int playerHealth = Player.createPlayer().getHealth() + Player.createPlayer().getDefense();
-//        int enemyHealth = Enemies.wolf.getHealth() + Enemies.wolf.getDefense();
-//        int playerAttackingPower = Player.createPlayer().getStrength() + Player.createPlayer().getSpeed() + Player.createPlayer().getIntel() ;
-//        int enemyAttackingPower = Enemies.wolf.getStrength() + Enemies.wolf.getSpeed() + Enemies.wolf.getIntel();
-//
-//    }
 
 }

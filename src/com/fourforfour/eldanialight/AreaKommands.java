@@ -20,16 +20,19 @@ public class AreaKommands {
         shopCommand.add(Command.SHOP);
         shopCommand.add(Command.LEAVE);
         shopCommand.add(Command.VIEW_ITEMS);
+        shopCommand.add(Command.VIEW_STATS);
 
         worldCommand.add(Command.VIEW);
         worldCommand.add(Command.VENTURE);
         worldCommand.add(Command.VIEW_ITEMS);
+        worldCommand.add(Command.VIEW_STATS);
 
         battleCommand.add(Command.ATTACK);
         battleCommand.add(Command.RUN);
         battleCommand.add(Command.ITEM);
         battleCommand.add(Command.VENTURE);
         battleCommand.add(Command.VIEW_ITEMS);
+        battleCommand.add(Command.VIEW_STATS);
     }
 
     public static void commands(Command c){
@@ -87,6 +90,9 @@ public class AreaKommands {
                 break;
             case VIEW_ITEMS:
                 Game.character.viewInventory();
+                break;
+            case VIEW_STATS:
+                Game.character.viewStats();
                 break;
             default:
                 System.out.println("Error");
