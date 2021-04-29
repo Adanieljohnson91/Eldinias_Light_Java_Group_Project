@@ -16,5 +16,6 @@ public enum Command {
     VENTURE,
     ITEM,
     VIEW_ITEMS,
-    SHOP
+    SHOP,
+    VIEW_STATS,
 }

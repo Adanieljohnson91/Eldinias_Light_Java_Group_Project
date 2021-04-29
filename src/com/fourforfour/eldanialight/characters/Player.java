@@ -12,10 +12,13 @@ public class Player extends Character implements BattleActions {
 
     private List<Quest> questLog = new ArrayList<>();
     private static Scanner scanner = new Scanner(System.in);
-
+    int maxLevel = 20;
+    int levelUpXp = 100;
     public Player() {
 
     }
+    // The User is given task of creating their in game player. They are given the option to choose what type of
+    //player they will create
 
     public static Player createPlayer() {
         Player player = new Player();
@@ -35,20 +38,20 @@ public class Player extends Character implements BattleActions {
             case MAGE:
                 player.setStrength(10);
                 player.setSpeed(20);
-                player.setIntel(35);
-                player.setDefense(30);
+                player.setIntel(30);
+                player.setDefense(20);
                 break;
             case ARCHER:
                 player.setStrength(15);
-                player.setSpeed(30);
+                player.setSpeed(25);
                 player.setIntel(15);
-                player.setDefense(40);
+                player.setDefense(35);
                 break;
             case KNIGHT:
                 player.setStrength(35);
                 player.setSpeed(20);
                 player.setIntel(5);
-                player.setDefense(45);
+                player.setDefense(30);
                 break;
             default:
                 System.out.println("You have entered an invalid type");
@@ -95,6 +98,69 @@ public class Player extends Character implements BattleActions {
 
     @Override
     public void use() {
+
+    }
+
+    public void viewStats(){
+
+        System.out.println("Health:" + this.getHealth());
+        System.out.println("Defense:" + this.getDefense());
+        System.out.println("Strength:" + this.getStrength());
+        System.out.println("Speed:" + this.getSpeed());
+        System.out.println("Intel:" + this.getIntel());
+        System.out.println("Bezos:" + this.getBezos());
+        System.out.println("XP:" + this.getXp());
+        System.out.println("Level:" + this.getLevel());
+    }
+
+    public void addXp(){
+
+    /*
+     * This  Method check to see if the player's level is high than the make level.
+     * If the level is lower than maxLevel then the method checks the
+     */
+       if(getLevel()< maxLevel) {
+           if (getXp() >= levelUpXp){
+
+
+               this.setLevel(this.getLevel()+1);
+               this.setHealth(this.getHealth()+ 15);
+               this.setBezos(this.getBezos() +15);
+               System.out.println("You have leveled up!! You are now level:" + this.getLevel());
+               /*
+                *This switch statement adds to the Stats based on PlayerType
+                */
+               switch(this.getPlayerType()){
+                   case MAGE:
+                       this.setDefense(this.getDefense() + 10);
+                       this.setStrength(this.getStrength() + 10);
+                       this.setSpeed(this.getSpeed() + 15);
+                       this.setIntel(this.getIntel() + 25);
+
+                       break;
+                   case ARCHER:
+                       this.setDefense(this.getDefense() + 15);
+                       this.setStrength(this.getStrength() + 15);
+                       this.setSpeed(this.getSpeed() +20);
+                       this.setIntel(this.getIntel()+ 10);
+                       break;
+                   case KNIGHT:
+                       this.setDefense(this.getDefense() + 20);
+                       this.setStrength(this.getStrength() + 25);
+                       this.setSpeed(this.getSpeed() + 15 );
+                       break;
+               }
+
+
+
+               this.setDefense(this.getDefense());
+               this.setStrength(this.getStrength());
+               this.setSpeed(this.getSpeed());
+               this.setIntel(this.getIntel());
+
+                levelUpXp = levelUpXp + 100;
+           }
+       }
 
     }
 }//EOC
