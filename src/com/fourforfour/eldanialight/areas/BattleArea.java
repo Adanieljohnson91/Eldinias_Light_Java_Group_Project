@@ -11,17 +11,20 @@ public class BattleArea extends DangerArea{
     public Enemy enemy;
     private String previousArea;
     private BattleSequence battleSequence;
-    public BattleArea(String name, AreaList areas, List<Command> command,Enemy enemy, AreaInfo areaInfo, String previousArea) {
+    private BattleAreaTypes battleAreaType;
+
+    public BattleArea(String name, AreaList areas, List<Command> command, AreaInfo areaInfo, String previousArea, BattleAreaTypes battleAreaType) {
         super(name, areas, command, areaInfo);
-        battleSequence = new BattleSequence(enemy);
+        battleSequence = new BattleSequence(EnemyGenerator.generate(battleAreaType));
         this.previousArea = previousArea;
+        this.battleAreaType = battleAreaType;
     }
 
     /**
      * Band aid- Reviving enemy needs to be pulled out... also, may be wise to create an enemy generator.
      */
     public void battle(){
-        enemy = new Enemy("Goblin", 10, 2, 3,4,5,34,43);
+        enemy = EnemyGenerator.generate(battleAreaType);
         battleSequence.battle();
     }
 

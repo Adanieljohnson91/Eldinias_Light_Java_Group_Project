@@ -60,8 +60,7 @@ public interface WorldAreas {
             AreaKommands.worldCommand,AreaInfo.EVIL_FOREST);
     BattleArea inner_evil_forest = new BattleArea("inner evil forest", new AreaList("evil forest", "evil forest lair"),
             AreaKommands.battleCommand,
-            new Enemy("Goblin",10,30,5,4,0,10,30),
-            AreaInfo.EVIL_FOREST,"evil forest");
+            AreaInfo.EVIL_FOREST,"evil forest", BattleAreaTypes.DARK);
     //badlands
     DangerArea badlands = new DangerArea("badlands",
             new AreaList("open world", "elki town", "fang hill"),
