@@ -48,7 +48,10 @@ public class AreaKommands {
                 System.out.println("Going");
                 break;
             case RUN:
-                System.out.println("Running");
+                if(Game.currentArea instanceof BattleArea){
+                    BattleArea current = (BattleArea) Game.currentArea;
+                    Game.currentArea = Game.world.get(current.getPreviousArea());
+                }
                 break;
             case ITEM:
                 System.out.println("Iteming");

@@ -13,19 +13,6 @@ public class Player extends Character implements BattleActions {
     private List<Quest> questLog = new ArrayList<>();
     private static Scanner scanner = new Scanner(System.in);
 
-    public Player(String name, double health, int defense, int strength, int speed, int intel, int bezos, int xp, double maxHealth, List<Quest> questLog) {
-        this.setName(name);
-        this.setHealth(health);
-        this.setDefense(defense);
-        this.setStrength(strength);
-        this.setSpeed(speed);
-        this.setIntel(intel);
-        this.setBezos(bezos);
-        this.setXp(xp);
-        this.questLog = questLog;
-        this.setMaxHealth(maxHealth);
-    }
-
     public Player() {
 
     }
@@ -40,15 +27,7 @@ public class Player extends Character implements BattleActions {
         // create PlayerName
         System.out.println("What shall we call you?:");
         player.setName(scanner.nextLine());
-
-        // createPlayerType
-//        System.out.println("What style of fighter are you? ex. Mage, Knight,  :");
-//        player.setPlayerType(PlayerType.valueOf(myScanner.nextLine().toUpperCase(Locale.ROOT)));
-
             player.setPlayerType(createPlayerClass());
-
-
-//        createPlayerClass(player);
 
         player.setHealth(50);
         player.setXp(0);
@@ -84,25 +63,16 @@ public class Player extends Character implements BattleActions {
     }
 
     public static PlayerType createPlayerClass(){
-        // ask user what class they want to play
         System.out.println("What style of fighter are you?");
-        PlayerType chosenClass = null;
-        // store user input
         String userInput = scanner.next();
+        PlayerType chosenClass;
         try{
-            chosenClass = PlayerType.valueOf(userInput);
+            chosenClass = PlayerType.valueOf(userInput.toUpperCase(Locale.ROOT));
             return chosenClass;
         }catch (IllegalArgumentException e){
             System.out.println("Invalid");
             return createPlayerClass();
         }
-        // iterate over PlayerType Enum
-//        return chosenClass;
-    }
-
-    public void addToQuestLog(Quest quest) {
-        questLog.add(quest);
-
     }
 
     @Override
@@ -119,11 +89,7 @@ public class Player extends Character implements BattleActions {
     @Override
     public boolean run(Character character) {
         Enemy enemy = (Enemy) character;
-        if ((this.getSpeed() * Utility.randomNumber()) > (enemy.getSpeed() * Utility.randomNumber())) {
-            return true;
-        } else {
-            return false;
-        }
+        return (this.getSpeed() * Utility.randomNumber()) > (enemy.getSpeed() * Utility.randomNumber());
     }
 
     @Override
@@ -133,10 +99,6 @@ public class Player extends Character implements BattleActions {
 
     @Override
     public void use() {
-
-    }
-
-    public void revive() {
 
     }
 }//EOC
