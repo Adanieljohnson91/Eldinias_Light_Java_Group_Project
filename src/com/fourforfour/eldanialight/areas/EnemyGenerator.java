@@ -20,7 +20,7 @@ public class EnemyGenerator {
                 result = new Enemy("Sky Dragon", 11, 12, 21, 21, 21 ,12, 10);
                 break;
             case DARK:
-                result = new Enemy("Dark Mist", 12, 21, 21, 12, 12 ,12, 10);
+                result = new Enemy("Dark Mist", 12, 21, 21, 12, 12 ,12, 50);
                 break;
             case FIRE:
                 result = new Enemy("Fire drake", 11, 12, 21, 2, 21 ,12, 10);

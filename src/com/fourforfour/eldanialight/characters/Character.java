@@ -19,6 +19,7 @@ public class Character {
     private int speed;
     private int xp;
     private double  maxHealth;
+    private int level;
 
     private PlayerType playerType;
     public List<Item> items = new ArrayList<>();
@@ -38,7 +39,7 @@ public class Character {
     public Character(String name, int health, int strength, int defense, int bezos, int intel, int speed) {
 
     }
-
+    //Getter and Setters
     public String getName() {
         return name;
     }
@@ -113,6 +114,14 @@ public class Character {
 
     public void addItem(Item item) {
         items.add(item);
+    }
+
+    public int getLevel() {
+        return level;
+    }
+
+    public void setLevel(int level) {
+        this.level = level;
     }
 
     public void addWearableItem(WearItem item) {
