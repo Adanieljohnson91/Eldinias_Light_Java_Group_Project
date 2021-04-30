@@ -23,6 +23,7 @@ public class Character {
 
     private PlayerType playerType;
     public List<Item> items = new ArrayList<>();
+    public List<String> questItems = new ArrayList<>();
     List<Item> equipment = new ArrayList<>();
     Scanner scanner = new Scanner(System.in);
 

@@ -49,6 +49,11 @@ public class QuestNPC extends Character implements InteractActions {
 //        }
 //    }
     private void offerQuest(){
+        if(quest.completion()){
+            System.out.println("You have completed the game warrior, not stop being a POS and go live your own life.");
+            System.exit(0);
+            return;
+        }
         System.out.println("Are you up to the challenge? will you accept " + quest.getName() + "? ");
         String input = scanner.nextLine().toLowerCase(Locale.ROOT).trim();
         switch (input){
