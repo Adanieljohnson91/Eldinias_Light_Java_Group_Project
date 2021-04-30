@@ -7,7 +7,7 @@ public class QuestsOfEldania {
         @Override
         public boolean completion() {
             boolean res = false;
-            if(Game.character.items.contains("warlocks head")){
+            if(Game.character.questItems.contains("gem")){
                 res = true;
             }
             return res;

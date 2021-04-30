@@ -48,7 +48,7 @@ public interface WorldAreas {
 
 
     DangerArea open_world = new DangerArea("open world",
-            new AreaList(" front gate", "badlands", "evil forest", "fire mountain", "castle eldina"),
+            new AreaList("front gate", "badlands", "evil forest", "fire mountain", "castle eldina"),
             AreaKommands.worldCommand,AreaInfo.OPEN_WORLD);
 
 
@@ -104,7 +104,7 @@ public interface WorldAreas {
 
     BattleArea throne_room = new BattleArea("throne room", new AreaList("castle eldina", "dungeon","training grounds"),
             AreaKommands.battleCommand,
-            AreaInfo.THRONE_ROOM,"throne room",BattleAreaTypes.DARK);
+            AreaInfo.THRONE_ROOM,"throne room",BattleAreaTypes.WARLOCK);
 
 
 }
