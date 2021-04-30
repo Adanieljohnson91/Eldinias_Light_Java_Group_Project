@@ -15,6 +15,7 @@ public class World implements WorldAreas {
 
         world.put("lucino town", lucino_town);
         world.put("lucino shops", lucino_shops);
+        world.put("lucino town hall", lucino_town_hall);
         world.put("armory", armory);
         world.put("magic", magic);
         world.put("front gate", front_gate);

@@ -8,6 +8,7 @@ public enum AreaInfo {
     LUCINO_TOWN(" The largest city in Eldina and one of the last strong holds preventing Tyroneious form" +
             "gaining complete control"),
     LUCINO_SHOPS("You are in a market place with a variety of shops. You can see the Armory, Inn, and Magic shop. "),
+    LUCINO_TOWN_HALL(""),
     FRONT_GATE("The main enterance to Lucino Town. It looks strong and sturdy, but you can see the marks left by a " +
             "recent attack"),
 

@@ -28,6 +28,9 @@ public class ItemsOfEldinia {
     public static UtilityItem escapeRope = new UtilityItem("escapeRope");
     public static UtilityItem treasureChestKey = new UtilityItem("treasureChestKey");
 
+    //Reward Items
+    public static RewardItem wolfClaw = new RewardItem("wolf claw");
+
 
     // Shop Inventory
     public static List<Item> armoryList = new ItemList(sword, shield, battleAxe).getList();

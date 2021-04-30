@@ -12,7 +12,7 @@ public class QuestArea extends SafeArea{
     HashMap<String, Item> items = new HashMap<>();
     public QuestNPC driver;
 
-    public QuestArea(String name, AreaList areas, List<Command> command, List<Item> itemList, QuestNPC driver,AreaInfo areaInfo) {
+    public QuestArea(String name, AreaList areas, List<Command> command,  QuestNPC driver,AreaInfo areaInfo) {
         super(name, areas, command,areaInfo);
         this.driver = driver;
 
