@@ -5,7 +5,9 @@ import com.fourforfour.eldanialight.characters.Enemy;
 import com.fourforfour.eldanialight.characters.NPCDict;
 import com.fourforfour.eldanialight.characters.QuestNPC;
 import com.fourforfour.eldanialight.characters.ShopNPC;
+import com.fourforfour.eldanialight.items.Chest;
 import com.fourforfour.eldanialight.items.ItemsOfEldinia;
+import com.fourforfour.eldanialight.items.UtilityItem;
 
 /**
  * shopCommands
