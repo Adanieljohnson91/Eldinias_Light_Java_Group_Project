@@ -36,8 +36,14 @@ public class Character {
     //This constructor was to all for original enemy creation
 
     //all args
-    public Character(String name, int health, int strength, int defense, int bezos, int intel, int speed) {
-
+    public Character(String name, double health, int strength, int defense, int bezos, int intel, int speed) {
+        this.name = name;
+        this.health = health;
+        this.strength = strength;
+        this.defense = defense;
+        this.bezos = bezos;
+        this.intel = intel;
+        this.speed = speed;
     }
     //Getter and Setters
     public String getName() {

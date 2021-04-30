@@ -6,14 +6,8 @@ import com.fourforfour.eldanialight.battle.Utility;
 public class Enemy extends Character implements BattleActions{
 
     public Enemy(String name,double health, int defense, int strength, int speed,int intel, int bezos ,int xp){
-       this.setName(name);
-       this.setHealth(health);
-       this.setStrength(strength);
-       this.setDefense(defense);
-       this.setIntel(intel);
-       this.setBezos(bezos);
-       this.setSpeed(speed);
-       this.setXp(xp);
+     super(name, health, defense, strength,bezos, speed, intel);
+     this.setXp(xp);
     }
     @Override
     public void attack(Character character) {

@@ -15,12 +15,22 @@ public class AreaKommands {
     public static List<Command> shopCommand = new ArrayList<>();
     public static List<Command>  worldCommand = new ArrayList<>();
     public static List<Command>  battleCommand = new ArrayList<>();
+    public static List<Command>  townHallCommand = new ArrayList<>();
+    public static List<Command>  talkCommand = new ArrayList<>();
 
     AreaKommands(){
         shopCommand.add(Command.SHOP);
         shopCommand.add(Command.LEAVE);
         shopCommand.add(Command.VIEW_ITEMS);
         shopCommand.add(Command.VIEW_STATS);
+
+        townHallCommand.add(Command.VIEW_CHARACTERS);
+        townHallCommand.add(Command.LEAVE);
+        townHallCommand.add(Command.VIEW_ITEMS);
+        townHallCommand.add(Command.VIEW_STATS);
+
+        talkCommand.add(Command.TALK);
+        talkCommand.add(Command.LEAVE);
 
         worldCommand.add(Command.VIEW);
         worldCommand.add(Command.VENTURE);
@@ -93,6 +103,9 @@ public class AreaKommands {
                 break;
             case VIEW_STATS:
                 Game.character.viewStats();
+                break;
+            case VIEW_CHARACTERS:
+                Game.currentArea.viewCharacters();
                 break;
             default:
                 System.out.println("Error");

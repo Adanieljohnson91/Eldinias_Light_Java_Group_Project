@@ -163,4 +163,9 @@ public class Player extends Character implements BattleActions {
        }
 
     }
+
+    public void addQuest(Quest quest){
+        questLog.add(quest);
+        System.out.println(quest.getName() + " has been added to your quest log");
+    }
 }//EOC
