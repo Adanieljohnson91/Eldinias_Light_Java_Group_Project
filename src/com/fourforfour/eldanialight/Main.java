@@ -24,7 +24,6 @@ public class Main {
         String inputString = "";
        SimpleAudioPlayer audioPlayer;
         try{
-            System.out.println("Running media");
             String filePath = "src/com/fourforfour/eldanialight/fairymusic.wav";
             audioPlayer = new SimpleAudioPlayer(filePath);
             audioPlayer.play();
