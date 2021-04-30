@@ -2,12 +2,17 @@ package com.fourforfour.eldanialight.characters;
 
 import com.fourforfour.eldanialight.Game;
 import com.fourforfour.eldanialight.battle.Utility;
+import com.fourforfour.eldanialight.items.Item;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class Enemy extends Character implements BattleActions{
-
-    public Enemy(String name,double health, int defense, int strength, int speed,int intel, int bezos ,int xp){
+    public String rewardItem;
+    public Enemy(String name,double health, int defense, int strength, int speed,int intel, int bezos ,int xp, String rewardItem){
      super(name, health, defense, strength,bezos, speed, intel);
      this.setXp(xp);
+     this.rewardItem = rewardItem;
     }
     @Override
     public void attack(Character character) {

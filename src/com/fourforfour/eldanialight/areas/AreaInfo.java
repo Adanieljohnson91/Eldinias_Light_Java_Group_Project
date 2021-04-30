@@ -5,9 +5,10 @@ import com.fourforfour.eldanialight.characters.Enemy;
 
 public enum AreaInfo {
     //areas of Lucino town
-    LUCINO_TOWN("Lucino Town. They largest city in Eldina and one of the last stronghold preventing Tyroneious form" +
+    LUCINO_TOWN(" The largest city in Eldina and one of the last strong holds preventing Tyroneious form" +
             "gaining complete control"),
-    LUCINO_SHOPS(""),
+    LUCINO_SHOPS("You are in a market place with a variety of shops. You can see the Armory, Inn, and Magic shop. "),
+    LUCINO_TOWN_HALL(""),
     FRONT_GATE("The main enterance to Lucino Town. It looks strong and sturdy, but you can see the marks left by a " +
             "recent attack"),
 
@@ -19,13 +20,14 @@ public enum AreaInfo {
             "deeper into the forest, and the second to the Giant's lair"),
     INNER_EVIL_FOREST("The path takes you deeper into the forest and it starts to get darker." +
             "There is is another path that takes you to what looks like a lair of some type. You cab hear a sinister sound" +
-            "you look and see a (insert enemy)"),
+            "you turn and prepare for battle"),
     EVIL_FOREST_LAIR("The forest seems to have open up and the tree seem to no longer block the little light" +
             "in the sky. You can see the two trails that lead here. You can see the remains of the Giant's victims scattered " +
             "on the ground. Suddenly you hear a loud thud followed by another. They seem to get closer"),
 
     //Badlands and areas within
-    BADLANDS ("Some badlands"),
+    BADLANDS ("You find yourself if a desolate land. you can tell that it was once full of life, but that life has been" +
+            "drained by the dark powers of Tyroneous. There is sign pointing to Fang hill and Elki Town  "),
     ELKI_TOWN("A small town that sits within the Badlands. The people seem to be on edge"),
     FANG_HILL("A hill covered area known to be home of wolves. you should be careful as they can attack from nowhere"),
     //fire mountain and areas

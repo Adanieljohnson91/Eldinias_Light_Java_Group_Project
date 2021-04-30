@@ -106,7 +106,7 @@ public class Area {
         }
     }
 
-    public void viewAreas(){
+    public void view(){
         System.out.println(Game.currentArea.areaInfo);
 
     }

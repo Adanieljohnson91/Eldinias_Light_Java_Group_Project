@@ -3,6 +3,7 @@ package com.fourforfour.eldanialight.areas;
 import com.fourforfour.eldanialight.AreaKommands;
 import com.fourforfour.eldanialight.characters.Enemy;
 import com.fourforfour.eldanialight.characters.NPCDict;
+import com.fourforfour.eldanialight.characters.QuestNPC;
 import com.fourforfour.eldanialight.characters.ShopNPC;
 import com.fourforfour.eldanialight.items.ItemsOfEldinia;
 
@@ -22,7 +23,6 @@ public interface WorldAreas {
     SafeArea lucino_shops = new SafeArea("lucino shops",
             new AreaList("armory", "magic", "inn", "front gate", "lucino town"),
             AreaKommands.worldCommand,AreaInfo.LUCINO_SHOPS, NPCDict.emptyCharacterList);
-
     ShopArea armory = new ShopArea("armory",
             new AreaList("lucino shops"),
             AreaKommands.shopCommand,
@@ -46,7 +46,7 @@ public interface WorldAreas {
 
 
     DangerArea open_world = new DangerArea("open world",
-            new AreaList("lucino front gate", "badlands", "evil forest", "fire mountain", "castle eldina"),
+            new AreaList(" front gate", "badlands", "evil forest", "fire mountain", "castle eldina"),
             AreaKommands.worldCommand,AreaInfo.OPEN_WORLD);
 
 

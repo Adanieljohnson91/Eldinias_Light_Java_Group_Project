@@ -24,8 +24,8 @@ public class Player extends Character implements BattleActions {
         Player player = new Player();
 
         //create intro
-        System.out.println("King: Thank you for coming to aid of Lord Black and the rest of Eldinia!!");
-        System.out.println("We must get some information from you  to know how to best help you defeat Tyronious the Black");
+        System.out.println("Welcome Champion and thank you for coming to aid of Eldinia!!");
+        System.out.println("Tell us about this brave soul who had come to defeat Tyronious the Black");
 
         // create PlayerName
         System.out.println("What shall we call you?:");
