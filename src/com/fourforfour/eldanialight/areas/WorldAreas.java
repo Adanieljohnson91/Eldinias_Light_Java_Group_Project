@@ -62,7 +62,7 @@ public interface WorldAreas {
 
     BattleArea evil_forest_lair = new BattleArea("inner evil forest", new AreaList("evil forest", "inner evil forest "),
             AreaKommands.battleCommand,
-            AreaInfo.EVIL_FOREST_LAIR,"evil forest",BattleAreaTypes.DARK);
+            AreaInfo.EVIL_FOREST_LAIR,"evil forest",BattleAreaTypes.GIANT);
 
     DangerArea badlands = new DangerArea("badlands",
             new AreaList("open world", "elki town", "fang hill"),
@@ -85,7 +85,7 @@ public interface WorldAreas {
 
     BattleArea cave = new BattleArea("cave", new AreaList("fire mountain", "base"),
             AreaKommands.battleCommand,
-            AreaInfo.CAVE,"cave",BattleAreaTypes.FIRE);
+            AreaInfo.CAVE,"cave",BattleAreaTypes.DRAGON);
 
 
 

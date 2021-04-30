@@ -48,7 +48,7 @@ public class AreaKommands {
         battleCommand.add(Command.VIEW_STATS);
     }
 
-    public static void commands(Command c){
+    public static void commands(Command c)  {
         switch (c){
             case SHOP:
                 if(Game.currentArea instanceof ShopArea){

@@ -30,13 +30,13 @@ public class EnemyGenerator {
                 result = new Enemy("Sand Golem", 12, 21, 12, 2, 21 ,12, 10,"IDK");
                 break;
             case GIANT:
-                result = new Enemy("Sand Golem", 12, 21, 12, 2, 21 ,12, 10,"sand");
+                result = new Enemy("Andre the Giant",100,100,150,35,0,100,150,"Rope");
                 break;
             case DRAGON:
-                result = new Enemy("Sand Golem", 12, 21, 12, 2, 21 ,12, 10,"blob");
+                result = new Enemy("Haku",125,100,80,150,60,100,150,"scale");
                 break;
             case WARLOCK:
-                result = new Enemy("War lock", 12, 21, 12, 2, 21 ,12, 10,"gem");
+                result = new Enemy("Tyronious the Black",300,150,150,150,150,10000,1000,"gem");
                 break;
             default:
                 result = new Enemy("Unknown Enemy", 999, 999, 999, 999, 999 ,999, 99999,"unknown");
