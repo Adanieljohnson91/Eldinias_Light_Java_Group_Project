@@ -3,6 +3,8 @@ package com.fourforfour.eldanialight;
 import com.fourforfour.eldanialight.areas.BattleArea;
 import com.fourforfour.eldanialight.areas.ShopArea;
 import com.fourforfour.eldanialight.battle.BattleSequence;
+import com.fourforfour.eldanialight.items.Chest;
+import com.fourforfour.eldanialight.items.Item;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -94,7 +96,7 @@ public class AreaKommands {
                 Game.currentArea.venture();
                 break;
             case OPEN:
-                System.out.println("Opening");
+                System.out.println("You have found ");
                 break;
             case CLOSE:
                 System.out.println("Closing");

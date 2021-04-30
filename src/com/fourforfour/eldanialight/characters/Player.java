@@ -2,13 +2,20 @@ package com.fourforfour.eldanialight.characters;
 
 import com.fourforfour.eldanialight.battle.Utility;
 
+import java.awt.*;
+import java.io.Console;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 import java.util.Scanner;
 
 
-public class Player extends Character implements BattleActions {
+public class Player extends Character implements BattleActions  {
+
+    public static final String TEXT_RESET = "\u001B[0m";
+    public static final String TEXT_RED = "\u001B[31m";
+    public static final String TEXT_CYAN = "\u001B[36m";
+
 
     private List<Quest> questLog = new ArrayList<>();
     private static Scanner scanner = new Scanner(System.in);
@@ -24,8 +31,9 @@ public class Player extends Character implements BattleActions {
         Player player = new Player();
 
         //create intro
-        System.out.println("Welcome Champion and thank you for coming to aid of Eldinia!!");
-        System.out.println("Tell us about this brave soul who had come to defeat Tyronious the Black");
+        System.out.println(TEXT_CYAN+"Welcome Champion and thank you for coming to aid of Eldinia!!");
+        System.out.println(TEXT_CYAN+"Tell us about this brave soul who has come to defeat"+TEXT_RESET+TEXT_RED
+                +" Tyronious the Black"+TEXT_CYAN);
 
         // create PlayerName
         System.out.println("What shall we call you?:");
@@ -56,7 +64,7 @@ public class Player extends Character implements BattleActions {
             default:
                 System.out.println("You have entered an invalid type");
         }
-        System.out.println("Welcome " + player.getName() + " the " + player.getPlayerType() + ".");
+        System.out.println("Welcome " + player.getName() + " the " + player.getPlayerType() + "."+TEXT_RESET);
         return player;
 
     }

@@ -4,6 +4,7 @@ package com.fourforfour.eldanialight.areas;
 import com.fourforfour.eldanialight.characters.Enemy;
 
 public enum AreaInfo {
+
     //areas of Lucino town
     LUCINO_TOWN(" The largest city in Eldina and one of the last strong holds preventing Tyroneious form" +
             "gaining complete control"),
@@ -48,7 +49,6 @@ public enum AreaInfo {
     DUNGEON("You find yourself in the castle dungeon. those once held as prisoners have been changed into monsters"),
     THRONE_ROOM("You have entered the throne room. You can see Tyroneious sitting with a sinister grin upon his face. " +
             "You can feel his evil intent as you prepare yourself for battle!");
-
 
     String info;
 
