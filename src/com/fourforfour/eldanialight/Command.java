@@ -18,4 +18,6 @@ public enum Command {
     VIEW_ITEMS,
     SHOP,
     VIEW_STATS,
+    VIEW_CHARACTERS,
+    TALK
 }

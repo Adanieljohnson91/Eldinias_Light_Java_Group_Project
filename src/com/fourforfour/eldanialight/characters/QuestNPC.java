@@ -2,15 +2,21 @@ package com.fourforfour.eldanialight.characters;
 
 import com.fourforfour.eldanialight.Game;
 
+import java.util.Locale;
 import java.util.Scanner;
 
 public class QuestNPC extends Character implements InteractActions {
     private String dialog;
-
-
-    public QuestNPC(String name, int health, int strength, int defense, int bezos, int intel, int speed,String dialog) {
+    private Quest quest;
+    private String name;
+    public QuestNPC(String name, double health, int strength, int defense, int bezos, int intel, int speed,String dialog, Quest quest) {
         super(name, health, strength, defense, bezos, intel, speed);
+        this.quest = quest;
         this.dialog = dialog;
+    }
+
+    private void giveQuest(){
+        Game.character.addQuest(quest);
     }
 
 
@@ -42,11 +48,26 @@ public class QuestNPC extends Character implements InteractActions {
 //
 //        }
 //    }
+    private void offerQuest(){
+        System.out.println("Are you up to the challenge? will you accept " + quest.getName() + "? ");
+        String input = scanner.nextLine().toLowerCase(Locale.ROOT).trim();
+        switch (input){
+            case "yes":
+                giveQuest();
+                break;
+            case "no":
+                System.out.println("Fair enough");
+                break;
+            default:
+                System.out.println("Invalid entry, please answer me " + Game.character.getName());
+                offerQuest();
+        }
+    }
 
     @Override
     public void talk() {
         System.out.println(dialog);
-
+        offerQuest();
     }
 
     @Override

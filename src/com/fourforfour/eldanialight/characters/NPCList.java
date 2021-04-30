@@ -3,9 +3,13 @@ package com.fourforfour.eldanialight.characters;
 import java.util.ArrayList;
 import java.util.List;
 
-class NPCList {
+public class NPCList {
 
         List<?super Character> npcList = new ArrayList<>();
+
+        public NPCList(){
+
+        }
 
         public NPCList(Character ...characters){
             for(Character c: characters){

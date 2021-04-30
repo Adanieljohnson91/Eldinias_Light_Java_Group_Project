@@ -9,12 +9,13 @@ import java.util.HashMap;
 
 public class World implements WorldAreas {
     HashMap<String, ? super Area> world = new HashMap<>();
-    AreaKommands areaKommands = new AreaKommands();
 
     public World() {
 
         world.put("lucino town", lucino_town);
         world.put("lucino shops", lucino_shops);
+        world.put("lucino town hall", lucino_town_hall);
+        world.put("warcheif", warchiefQuest);
         world.put("armory", armory);
         world.put("magic", magic);
         world.put("front gate", front_gate);
