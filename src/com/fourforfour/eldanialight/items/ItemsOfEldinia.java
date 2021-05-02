@@ -34,7 +34,7 @@ public class ItemsOfEldinia {
 
 
     // Shop Inventory
-    public static List<Item> armoryList = new ItemList(sword, shield, battleAxe).getList();
+    public static List<Item> armoryList = new ItemList(sword, shield, battleAxe,bow,staff).getList();
     public static List<Item> magicList = new ItemList(healthPotion, manaPotion,speedPotion,strengthPotion).getList();
 
 

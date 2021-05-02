@@ -58,7 +58,7 @@ public interface WorldAreas {
 
     BattleArea inner_evil_forest = new BattleArea("inner evil forest", new AreaList("evil forest", "evil forest lair"),
             AreaKommands.battleCommand,
-            AreaInfo.INNER_EVIL_FOREST,"evil forest",BattleAreaTypes.DARK);
+            AreaInfo.INNER_EVIL_FOREST,"evil forest",BattleAreaTypes.FOREST);
 
     BattleArea evil_forest_lair = new BattleArea("inner evil forest", new AreaList("evil forest", "inner evil forest "),
             AreaKommands.battleCommand,

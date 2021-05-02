@@ -52,7 +52,7 @@ public class QuestNPC extends Character implements InteractActions {
 //    }
     private void offerQuest(){
         if(quest.completion()){
-            System.out.println(TEXT_GREEN+"You have completed the game warrior, not stop being a POS and go live your own life."+TEXT_RESET);
+            System.out.println(TEXT_GREEN+"Thank you great Warrior you have returned the light to Eldina and and its people."+TEXT_RESET);
             System.exit(0);
             return;
         }
@@ -63,7 +63,7 @@ public class QuestNPC extends Character implements InteractActions {
                 giveQuest();
                 break;
             case "no":
-                System.out.println(TEXT_GREEN+"Fair enough"+TEXT_RESET);
+                System.out.println(TEXT_GREEN+"That is why you are here you know?"+TEXT_RESET);
                 break;
             default:
                 System.out.println(TEXT_GREEN+"Invalid entry, please answer me " + Game.character.getName()+TEXT_RESET);
