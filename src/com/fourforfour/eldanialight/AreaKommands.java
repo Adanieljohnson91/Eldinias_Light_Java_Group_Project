@@ -40,7 +40,6 @@ public class AreaKommands {
         worldCommand.add(Command.VIEW_STATS);
 
         battleCommand.add(Command.ATTACK);
-        battleCommand.add(Command.RUN);
         battleCommand.add(Command.VIEW);
         battleCommand.add(Command.ITEM);
         battleCommand.add(Command.VENTURE);

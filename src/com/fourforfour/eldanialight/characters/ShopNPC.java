@@ -39,6 +39,7 @@ public class ShopNPC extends Character implements InteractActions {
             if(items.containsKey(selectedItem)){
                 System.out.println("Excellent Choice traveler: +1 " + selectedItem);
                 Game.character.addItem(items.get(selectedItem));
+                barter(items);
             }else{
                 System.out.println("Sorry traveler, we don't have that here: " + selectedItem);
                 barter(items);

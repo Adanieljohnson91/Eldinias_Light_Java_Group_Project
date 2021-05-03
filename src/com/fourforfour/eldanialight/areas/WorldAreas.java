@@ -87,8 +87,6 @@ public interface WorldAreas {
             AreaKommands.battleCommand,
             AreaInfo.CAVE,"cave",BattleAreaTypes.FIRE);
 
-
-
     //castle eldina
     DangerArea castle_eldina = new DangerArea("castle eldina",
             new AreaList("open world", "training grounds", "dungeon", "throne room"),

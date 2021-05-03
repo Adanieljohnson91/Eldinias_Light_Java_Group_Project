@@ -8,6 +8,7 @@ import java.util.Scanner;
 public class QuestNPC extends Character implements InteractActions {
     private String dialog;
     private Quest quest;
+    private boolean questAccepted = false;
     private String name;
     public QuestNPC(String name, double health, int strength, int defense, int bezos, int intel, int speed,String dialog, Quest quest) {
         super(name, health, strength, defense, bezos, intel, speed);
@@ -54,10 +55,15 @@ public class QuestNPC extends Character implements InteractActions {
             System.exit(0);
             return;
         }
+        if(questAccepted){
+            System.out.println("What are you doing wasting time, Eldinia is counting on you!");
+            return;
+        }
         System.out.println("Are you up to the challenge? will you accept " + quest.getName() + "? ");
         String input = scanner.nextLine().toLowerCase(Locale.ROOT).trim();
         switch (input){
             case "yes":
+                questAccepted = true;
                 giveQuest();
                 break;
             case "no":
