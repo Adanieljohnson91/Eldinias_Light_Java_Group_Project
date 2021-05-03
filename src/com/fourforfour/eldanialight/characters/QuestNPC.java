@@ -6,6 +6,8 @@ import java.util.Locale;
 import java.util.Scanner;
 
 public class QuestNPC extends Character implements InteractActions {
+    public static final String TEXT_RESET = "\u001B[0m";
+    public static final String TEXT_GREEN = "\u001B[32m";
     private String dialog;
     private Quest quest;
     private boolean questAccepted = false;
@@ -51,7 +53,7 @@ public class QuestNPC extends Character implements InteractActions {
 //    }
     private void offerQuest(){
         if(quest.completion()){
-            System.out.println("You have completed the game warrior, not stop being a POS and go live your own life.");
+            System.out.println(TEXT_GREEN+"Thank you great Warrior you have returned the light to Eldina and and its people."+TEXT_RESET);
             System.exit(0);
             return;
         }
@@ -59,7 +61,7 @@ public class QuestNPC extends Character implements InteractActions {
             System.out.println("What are you doing wasting time, Eldinia is counting on you!");
             return;
         }
-        System.out.println("Are you up to the challenge? will you accept " + quest.getName() + "? ");
+        System.out.println(TEXT_GREEN+"Are you up to the challenge? will you accept " + quest.getName() + "? "+TEXT_RESET);
         String input = scanner.nextLine().toLowerCase(Locale.ROOT).trim();
         switch (input){
             case "yes":
@@ -67,10 +69,10 @@ public class QuestNPC extends Character implements InteractActions {
                 giveQuest();
                 break;
             case "no":
-                System.out.println("Fair enough");
+                System.out.println(TEXT_GREEN+"That is why you are here you know?"+TEXT_RESET);
                 break;
             default:
-                System.out.println("Invalid entry, please answer me " + Game.character.getName());
+                System.out.println(TEXT_GREEN+"Invalid entry, please answer me " + Game.character.getName()+TEXT_RESET);
                 offerQuest();
         }
     }

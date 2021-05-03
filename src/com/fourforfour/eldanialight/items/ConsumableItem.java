@@ -7,7 +7,7 @@ public class ConsumableItem  extends Item{
     private int enhancer;
     private ItemType type;
 
-    public ConsumableItem(String name, int enhancer, ItemType type) {
+    public ConsumableItem(String name, int enhancer, ItemType type, int itemWorth) {
         super(name);
         this.enhancer = enhancer;
         this.type = type;
