@@ -185,6 +185,8 @@ public class Character {
         System.out.println("Equip or Cancel");
         String userInput = scanner.nextLine();
         if (userInput.equalsIgnoreCase("Equip")) {
+            // if(findEquipment == true){
+            //  }
             item.equipItem(this);
             addWearableItem(item);
             items.remove(item);
@@ -193,6 +195,14 @@ public class Character {
         }
     }
 
+    public Item findEquipment(String equipmentSelection){
+        for (Item currentEquipment : equipment) {
+            if(currentEquipment.getName().equals(equipmentSelection)){
+                return currentEquipment;
+            }
+        }
+        return null;
+    }
     public Item findItem(String itemName) {
         for (Item currentItem : items) {
             if (itemName.equalsIgnoreCase(currentItem.getName())) {

@@ -7,11 +7,12 @@ public class WearItem extends Item{
     private int defense;
     private int attack;
 
-    public WearItem(String name, int health, int defense, int attack) {
+    public WearItem(String name, int health, int defense, int attack, int itemWorth) {
         super(name);
         this.health = health;
         this.defense = defense;
         this.attack = attack;
+        setItemWorth(itemWorth);
     }
 
     public void equipItem(Character character){
