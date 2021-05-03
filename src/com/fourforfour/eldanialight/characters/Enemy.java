@@ -9,6 +9,7 @@ import java.util.List;
 
 public class Enemy extends Character implements BattleActions{
     public String rewardItem;
+    private String dialog;
     public Enemy(String name,double health, int defense, int strength, int speed,int intel, int bezos ,int xp, String rewardItem){
      super(name, health, defense, strength,bezos, speed, intel);
      this.setXp(xp);

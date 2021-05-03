@@ -64,7 +64,8 @@ public class Player extends Character implements BattleActions  {
             default:
                 System.out.println("You have entered an invalid type");
         }
-        System.out.println("Welcome " + player.getName() + " the " + player.getPlayerType() + "."+TEXT_RESET);
+        System.out.println("Welcome " + player.getName() + " the " + player.getPlayerType() + ". " +
+                "Please go speak with the Warcheif at the town hall"+TEXT_RESET);
         return player;
 
     }
