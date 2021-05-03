@@ -1,6 +1,10 @@
 package com.fourforfour.eldanialight.characters;
 
+import java.util.ArrayList;
+import java.util.Collection;
+
 public interface Enemies {
+
 
 
     // Below are the Enemies, they are all from the Enemy Class and have attributes based on level, easy, medium, hard
@@ -10,8 +14,8 @@ public interface Enemies {
      * Easy enemies stats can have values in these ranges
      * Health:15-30 , defense: 10-20 , strength: 10-20, speed:15-30, intel 0 , bezos 10-15, xp 20-30
      */
-    Enemy undead = new Enemy("undead",50,35,35,35 ,0,10,20);
-    Enemy goblin = new Enemy("Goblin",50,30,25,40,0,10,20);
+    Enemy undead = new Enemy("undead",15,35,35,35 ,0,10,20);
+    Enemy goblin = new Enemy("Goblin",20,30,25,40,0,10,20);
 
     /*
      * Medium enemies stats can have values in these ranges
@@ -27,6 +31,7 @@ public interface Enemies {
     Boss Giant = new Boss("Andre the Giant",100,100,150,35,0,100,150);
     Boss Dragon = new Boss("Haku",125,100,80,150,60,100,150);
     Boss Tyroneious = new Boss("Tyroneious the Black",300,150,150,150,150,10000,1000);
+
 
 
 }

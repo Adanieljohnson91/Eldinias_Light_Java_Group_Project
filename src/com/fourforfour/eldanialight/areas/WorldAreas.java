@@ -75,7 +75,7 @@ public interface WorldAreas {
             AreaKommands.worldCommand,AreaInfo.ELKI_TOWN);
     BattleArea fang_hill = new BattleArea("fang hill", new AreaList("badlands", "elki town"),
             AreaKommands.battleCommand,
-            AreaInfo.FANG_HILL,"fang hill",BattleAreaTypes.DESERT);
+            AreaInfo.FANG_HILL,"fang hill",BattleAreaTypes.TUNDRA);
 
 
     //Mountain

@@ -8,5 +8,6 @@ public enum BattleAreaTypes {
     DARK,
     DRAGON,
     GIANT,
-    WARLOCK
+    WARLOCK,
+    TUNDRA
 }
