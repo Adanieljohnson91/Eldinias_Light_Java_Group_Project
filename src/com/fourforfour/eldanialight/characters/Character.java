@@ -23,6 +23,7 @@ public class Character {
 
     private PlayerType playerType;
     public List<Item> items = new ArrayList<>();
+    public List<String> questItems = new ArrayList<>();
     List<Item> equipment = new ArrayList<>();
     Scanner scanner = new Scanner(System.in);
 
@@ -36,8 +37,14 @@ public class Character {
     //This constructor was to all for original enemy creation
 
     //all args
-    public Character(String name, int health, int strength, int defense, int bezos, int intel, int speed) {
-
+    public Character(String name, double health, int strength, int defense, int bezos, int intel, int speed) {
+        this.name = name;
+        this.health = health;
+        this.strength = strength;
+        this.defense = defense;
+        this.bezos = bezos;
+        this.intel = intel;
+        this.speed = speed;
     }
     //Getter and Setters
     public String getName() {
@@ -130,17 +137,17 @@ public class Character {
     }
 
     public void viewInventory() {
-        System.out.println("Enter the item name or back: ");
-        System.out.println("***INVENTORY***");
+        System.out.println("\nEnter the item name or back: ");
+        System.out.println("\n***INVENTORY***");
+
         for (Item item : items) {
             System.out.println(item.getName());
         }
         if (items.size() == 0) {
             System.out.println("There is nothing in the inventory");
-            return;
         }
         System.out.println("****************");
-        System.out.println("# of Items in Inventory: " + items.size());
+        System.out.println("# of Items in Inventory: " + items.size() + "\n");
     }
 
 

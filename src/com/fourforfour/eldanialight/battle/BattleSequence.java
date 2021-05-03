@@ -109,7 +109,9 @@ public class BattleSequence {
         Game.character.setXp((Game.character.getXp())+this.enemy.getXp());
         Game.character.setBezos((Game.character.getBezos())+ this.enemy.getBezos());
         System.out.println("You have defeated " + this.enemy.getName());
-        System.out.println("You have earned " + this.enemy.getXp() + "XP and " + this.enemy.getBezos() + " Bezos");
+        System.out.println("You have earned " +Game.character.getXp() + "XP and " + Game.character.getBezos() + " Bezos");
+        System.out.println("You received a "+this.enemy.rewardItem);
+        Game.character.questItems.add(this.enemy.rewardItem);
 
 
        BattleArea area = (BattleArea) Game.currentArea;

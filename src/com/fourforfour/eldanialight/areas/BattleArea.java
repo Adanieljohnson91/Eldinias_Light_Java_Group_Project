@@ -2,6 +2,7 @@ package com.fourforfour.eldanialight.areas;
 
 import com.fourforfour.eldanialight.Command;
 import com.fourforfour.eldanialight.battle.BattleSequence;
+import com.fourforfour.eldanialight.characters.Character;
 import com.fourforfour.eldanialight.characters.Enemy;
 
 import java.util.List;
