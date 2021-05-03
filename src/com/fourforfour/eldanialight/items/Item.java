@@ -6,6 +6,7 @@ public class Item {
     private String name;
     private int count;
     private int itemWorth;
+    private WearItemType wearItemType;
 
     public Item(String name) {
         this.setName(name);
@@ -21,6 +22,12 @@ public class Item {
         setName(name);
         setCount(count);
         setItemWorth(itemWorth);
+    }
+    public Item(String name, int count,int itemWorth, WearItemType wearItemType){
+        setName(name);
+        setCount(count);
+        setItemWorth(itemWorth);
+        setWearItemType(wearItemType);
     }
 
     public void setName(String name) {
@@ -46,4 +53,13 @@ public class Item {
     public void setItemWorth(int itemWorth) {
         this.itemWorth = itemWorth;
     }
+
+    public WearItemType getWearItemType() {
+        return wearItemType;
+    }
+
+    public void setWearItemType(WearItemType wearItemType) {
+        this.wearItemType = wearItemType;
+    }
+
 }

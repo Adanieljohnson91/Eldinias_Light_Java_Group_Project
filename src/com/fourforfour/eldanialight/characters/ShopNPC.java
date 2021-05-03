@@ -52,18 +52,23 @@ public class ShopNPC extends Character implements InteractActions {
         System.out.println("BUY or SElL or LEAVE");
         String input = scanner.nextLine();
         if (input.equalsIgnoreCase("BUY")) {
-            // buy()
             System.out.println("Great, here are available Items: ");
             items.forEach((k, v) -> System.out.println(v.getName() + " " + v.getItemWorth() + " Bezos"));
             System.out.println("Please Select an Item form above");
             String selectedItem = scanner.nextLine();
             if (items.containsKey(selectedItem)) {
-                System.out.println("Excellent Choice traveler: +1 " + selectedItem);
-                Game.character.addItem(items.get(selectedItem));
-            } else {
+                if(Game.character.getBezos() >= items.get(selectedItem).getItemWorth()){
+                    System.out.println("Excellent Choice traveler: +1 " + selectedItem);
+                    Game.character.setBezos(Game.character.getBezos() - items.get(selectedItem).getItemWorth());
+                    Game.character.addItem(items.get(selectedItem));
+                }else{
+                    System.out.println("You do not have enough to buy that item!");
+                }
+
+            }else{
                 System.out.println("Sorry traveler, we don't have that here: " + selectedItem);
-                barter(items);
             }
+            barter(items);
         } else if (input.equalsIgnoreCase("SELL")) {
 //            System.out.println("We have no money for you!");
             sell();

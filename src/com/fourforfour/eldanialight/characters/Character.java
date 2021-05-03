@@ -5,6 +5,7 @@ import com.fourforfour.eldanialight.items.*;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 import java.util.Scanner;
 
 public class Character {
@@ -23,7 +24,8 @@ public class Character {
 
     private PlayerType playerType;
     public List<Item> items = new ArrayList<>();
-    List<Item> equipment = new ArrayList<>();
+    public List<String> questItems = new ArrayList<>();
+    public List<WearItem> equipment = new ArrayList<>();
     Scanner scanner = new Scanner(System.in);
 
 
@@ -36,8 +38,14 @@ public class Character {
     //This constructor was to all for original enemy creation
 
     //all args
-    public Character(String name, int health, int strength, int defense, int bezos, int intel, int speed) {
-
+    public Character(String name, double health, int strength, int defense, int bezos, int intel, int speed) {
+        this.name = name;
+        this.health = health;
+        this.strength = strength;
+        this.defense = defense;
+        this.bezos = bezos;
+        this.intel = intel;
+        this.speed = speed;
     }
     //Getter and Setters
     public String getName() {
@@ -181,18 +189,38 @@ public class Character {
         }
     }
 
-    public void equip(WearItem item) {
+    public void equip(Item item) {
         System.out.println("Equip or Cancel");
         String userInput = scanner.nextLine();
         if (userInput.equalsIgnoreCase("Equip")) {
-            // if(findEquipment == true){
-            //  }
-            item.equipItem(this);
-            addWearableItem(item);
+            if(isEquipped(findEquipment(item.getName())) && isTheSameWearType(item)){
+                System.out.println("You already have the item equipped");
+                return;
+            }
+            ((WearItem)item).equipItem(this);
+            addWearableItem(((WearItem)item));
             items.remove(item);
         } else {
             System.out.println("Cannot equip item");
         }
+    }
+
+    public boolean isTheSameWearType(Item wearItem){
+        for (WearItem armorType : equipment) {
+            if(wearItem.getWearItemType().equals(armorType.getWearItemType())){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public boolean isEquipped(Item item) {
+        for (Item currentEquipment : equipment) {
+            if (currentEquipment.getName().equals(item.getName())) {
+                return true;
+            }
+        }
+        return false;
     }
 
     public Item findEquipment(String equipmentSelection){
@@ -203,6 +231,7 @@ public class Character {
         }
         return null;
     }
+
     public Item findItem(String itemName) {
         for (Item currentItem : items) {
             if (itemName.equalsIgnoreCase(currentItem.getName())) {

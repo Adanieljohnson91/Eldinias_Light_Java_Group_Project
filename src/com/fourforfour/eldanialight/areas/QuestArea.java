@@ -1,6 +1,7 @@
 package com.fourforfour.eldanialight.areas;
 import com.fourforfour.eldanialight.Command;
 import com.fourforfour.eldanialight.Game;
+import com.fourforfour.eldanialight.characters.NPCDict;
 import com.fourforfour.eldanialight.characters.QuestNPC;
 import com.fourforfour.eldanialight.items.Item;
 
@@ -13,7 +14,7 @@ public class QuestArea extends SafeArea{
     public QuestNPC driver;
 
     public QuestArea(String name, AreaList areas, List<Command> command, List<Item> itemList, QuestNPC driver,AreaInfo areaInfo) {
-        super(name, areas, command,areaInfo);
+        super(name, areas, command,areaInfo, NPCDict.emptyCharacterList);
         this.driver = driver;
 
 
