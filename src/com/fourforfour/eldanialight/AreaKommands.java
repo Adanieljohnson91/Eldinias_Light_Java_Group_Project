@@ -3,6 +3,8 @@ package com.fourforfour.eldanialight;
 import com.fourforfour.eldanialight.areas.BattleArea;
 import com.fourforfour.eldanialight.areas.ShopArea;
 import com.fourforfour.eldanialight.battle.BattleSequence;
+import com.fourforfour.eldanialight.items.Chest;
+import com.fourforfour.eldanialight.items.Item;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,21 +17,34 @@ public class AreaKommands {
     public static List<Command> shopCommand = new ArrayList<>();
     public static List<Command>  worldCommand = new ArrayList<>();
     public static List<Command>  battleCommand = new ArrayList<>();
+    public static List<Command>  townHallCommand = new ArrayList<>();
+    public static List<Command>  talkCommand = new ArrayList<>();
 
     AreaKommands(){
         shopCommand.add(Command.SHOP);
         shopCommand.add(Command.LEAVE);
         shopCommand.add(Command.VIEW_ITEMS);
+        shopCommand.add(Command.VIEW_STATS);
+
+        townHallCommand.add(Command.VIEW_CHARACTERS);
+        townHallCommand.add(Command.LEAVE);
+        townHallCommand.add(Command.VIEW_ITEMS);
+        townHallCommand.add(Command.VIEW_STATS);
+
+        talkCommand.add(Command.TALK);
+        talkCommand.add(Command.LEAVE);
 
         worldCommand.add(Command.VIEW);
         worldCommand.add(Command.VENTURE);
         worldCommand.add(Command.VIEW_ITEMS);
+        worldCommand.add(Command.VIEW_STATS);
 
         battleCommand.add(Command.ATTACK);
-        battleCommand.add(Command.RUN);
+        battleCommand.add(Command.VIEW);
         battleCommand.add(Command.ITEM);
         battleCommand.add(Command.VENTURE);
         battleCommand.add(Command.VIEW_ITEMS);
+        battleCommand.add(Command.VIEW_STATS);
     }
 
     public static void commands(Command c){
@@ -47,7 +62,10 @@ public class AreaKommands {
                 System.out.println("Going");
                 break;
             case RUN:
-                System.out.println("Running");
+                if(Game.currentArea instanceof BattleArea){
+                    BattleArea current = (BattleArea) Game.currentArea;
+                    Game.currentArea = Game.world.get(current.getPreviousArea());
+                }
                 break;
             case ITEM:
                 System.out.println("Iteming");
@@ -77,13 +95,19 @@ public class AreaKommands {
                 Game.currentArea.venture();
                 break;
             case OPEN:
-                System.out.println("Opening");
+                System.out.println("You have found ");
                 break;
             case CLOSE:
                 System.out.println("Closing");
                 break;
             case VIEW_ITEMS:
                 Game.character.viewInventory();
+                break;
+            case VIEW_STATS:
+                Game.character.viewStats();
+                break;
+            case VIEW_CHARACTERS:
+                Game.currentArea.viewCharacters();
                 break;
             default:
                 System.out.println("Error");

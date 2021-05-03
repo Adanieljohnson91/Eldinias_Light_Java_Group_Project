@@ -3,6 +3,8 @@ package com.fourforfour.eldanialight.areas;
 import com.fourforfour.eldanialight.AreaKommands;
 import com.fourforfour.eldanialight.Command;
 import com.fourforfour.eldanialight.Game;
+import com.fourforfour.eldanialight.characters.Character;
+import com.fourforfour.eldanialight.characters.QuestNPC;
 
 import java.util.HashMap;
 import java.util.List;
@@ -15,6 +17,7 @@ public class Area {
     private HashMap<String, Character> characters = new HashMap<>();
     private AreaList areas;
     private List<Command> command;
+    private List<? super Character> npcList;
     private Scanner scanner = new Scanner(System.in);
     private AreaInfo areaInfo;
 
@@ -31,17 +34,20 @@ public class Area {
     }
 
 
-    public Area(String name, AreaList areas, List<Command> command,AreaInfo areaInfo){
+    public Area(String name, AreaList areas, List<Command> command, AreaInfo areaInfo, List<? super Character> npcList){
         this.name = name;
         this.areas = areas;
         this.command = command;
         this.areaInfo = areaInfo;
+        this.npcList = npcList;
 
     }
 
     public void printCommands(){
         for(Command cmd : command){
-            System.out.println(cmd);
+            String c = cmd.toString();
+            c = c.replace("_", " ");
+            System.out.println(c);
         }
     }
 
@@ -53,6 +59,37 @@ public class Area {
                 return;
             }
             System.out.println("Invalid Command");
+        }
+    }
+
+    public void viewCharacters(){
+        if(npcList.isEmpty()){
+            System.out.println("No characters in this area");
+        }else{
+            printCharacters();
+            System.out.println("Who would you like to speak to?");
+            talkToCharacter();
+        }
+    }
+
+    private void talkToCharacter(){
+        String input = scanner.nextLine();
+        talksNPC(input);
+
+    }
+
+    private void talksNPC(String name){
+        for(Object character: npcList){
+            if((((Character)character).getName()).equalsIgnoreCase(name)){
+                ((QuestNPC)character).talk();
+            }
+        }
+    }
+
+    public void printCharacters(){
+        for(Object character: npcList){
+            QuestNPC current = (QuestNPC) character;
+            System.out.println(current.getName());
         }
     }
 
@@ -69,7 +106,7 @@ public class Area {
         }
     }
 
-    public void viewAreas(){
+    public void view(){
         System.out.println(Game.currentArea.areaInfo);
 
     }

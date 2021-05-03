@@ -2,6 +2,8 @@ package com.fourforfour.eldanialight.battle;
 
 import com.fourforfour.eldanialight.Game;
 import com.fourforfour.eldanialight.areas.BattleArea;
+import com.fourforfour.eldanialight.areas.BattleAreaTypes;
+import com.fourforfour.eldanialight.areas.EnemyGenerator;
 import com.fourforfour.eldanialight.characters.*;
 import com.fourforfour.eldanialight.Main;
 import com.fourforfour.eldanialight.characters.Character;
@@ -14,17 +16,20 @@ public class BattleSequence {
 
     Scanner myScanner = new Scanner(System.in);
     Enemy enemy;
+    BattleAreaTypes battleAreaTypes;
     private boolean stillFighting = true;
 //use Game.currentPlayer to access the player in the game
 // make attack method and check to see if the character that got attacked is still alive
 //
-    public BattleSequence(Enemy enemy){
-        this.enemy=enemy;
+    public BattleSequence(BattleAreaTypes battleAreaTypes){
+        this.battleAreaTypes = battleAreaTypes;
+        this.enemy= EnemyGenerator.generate(battleAreaTypes);
     }
 
     public void battle(){
-    battleChoice();
-    System.out.println("");
+        if(enemy.getHealth() < 1) enemy = EnemyGenerator.generate(battleAreaTypes);
+        battleChoice();
+        System.out.println("");
 
     }
 
@@ -105,11 +110,14 @@ public class BattleSequence {
         Game.character.setBezos((Game.character.getBezos())+ this.enemy.getBezos());
         System.out.println("You have defeated " + this.enemy.getName());
         System.out.println("You have earned " +Game.character.getXp() + "XP and " + Game.character.getBezos() + " Bezos");
+        System.out.println("You received a "+this.enemy.rewardItem);
+        Game.character.questItems.add(this.enemy.rewardItem);
 
 
        BattleArea area = (BattleArea) Game.currentArea;
         System.out.println("You will be returning to " + area.getPreviousArea());
         Game.currentArea = Game.world.get(area.getPreviousArea());
+        Game.character.addXp();
                 stillFighting = false;
     }
 
@@ -121,13 +129,5 @@ public class BattleSequence {
         stillFighting = false;
 
     }
-//  //  public void setStats(){
-//
-//        int playerHealth = Player.createPlayer().getHealth() + Player.createPlayer().getDefense();
-//        int enemyHealth = Enemies.wolf.getHealth() + Enemies.wolf.getDefense();
-//        int playerAttackingPower = Player.createPlayer().getStrength() + Player.createPlayer().getSpeed() + Player.createPlayer().getIntel() ;
-//        int enemyAttackingPower = Enemies.wolf.getStrength() + Enemies.wolf.getSpeed() + Enemies.wolf.getIntel();
-//
-//    }
 
 }

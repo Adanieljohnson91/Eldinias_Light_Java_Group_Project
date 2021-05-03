@@ -1,7 +1,9 @@
 package com.fourforfour.eldanialight.characters;
 
+import java.util.List;
+
 public class NPCDict {
-    private static QuestNPC warcheif = new QuestNPC("War Chief",10,10,10,50,10,5,"I am Groot");
+    public static QuestNPC warcheif = new QuestNPC("War Chief",10,10,10,50,10,5,"I am Groot", QuestsOfEldania.killTyroneious);
 
     private static ShopNPC blacksmith = new ShopNPC("Black Smith",5,5,5,1500,5,1,"Welcome to my Shop");
 
@@ -9,7 +11,8 @@ public class NPCDict {
 
     private static ShopNPC innkeep = new ShopNPC("Inn Keeper",5,5,5,1000,5,1,"Welcome to the Inn");
 
-    public static NPCList characterList = new NPCList(warcheif, blacksmith, innkeep, shopkeep);
+    public static List<? super Character> emptyCharacterList = new NPCList().getNPCList();
+    public static List<? super Character> questCharacterList = new NPCList(warcheif).getNPCList();
 
     ShopNPC getBlacksmith = new ShopNPC("Black Smith",5,5,5,1500,5,1,"Welcome to my Shop");
 

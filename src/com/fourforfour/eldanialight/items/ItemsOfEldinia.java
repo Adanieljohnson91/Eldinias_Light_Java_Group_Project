@@ -1,5 +1,6 @@
 package com.fourforfour.eldanialight.items;
 
+import com.fourforfour.eldanialight.areas.QuestArea;
 import jdk.jshell.execution.Util;
 
 import java.util.List;
@@ -28,8 +29,13 @@ public class ItemsOfEldinia {
     public static UtilityItem escapeRope = new UtilityItem("escapeRope");
     public static UtilityItem treasureChestKey = new UtilityItem("treasureChestKey");
 
+    //Reward Items
+    public static RewardItem wolfClaw = new RewardItem("wolf claw");
+
 
     // Shop Inventory
     public static List<Item> armoryList = new ItemList(sword, shield, battleAxe).getList();
     public static List<Item> magicList = new ItemList(healthPotion, manaPotion,speedPotion,strengthPotion).getList();
+
+
 }

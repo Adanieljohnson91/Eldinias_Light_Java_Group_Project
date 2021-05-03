@@ -1,6 +1,7 @@
 package com.fourforfour.eldanialight.areas;
 import com.fourforfour.eldanialight.Command;
 import com.fourforfour.eldanialight.Game;
+import com.fourforfour.eldanialight.characters.NPCDict;
 import com.fourforfour.eldanialight.characters.ShopNPC;
 import com.fourforfour.eldanialight.items.Item;
 import java.util.ArrayList;
@@ -12,7 +13,7 @@ public class ShopArea extends SafeArea{
     public ShopNPC vendor;
 
     public ShopArea(String name, AreaList areas, List<Command> command, List<Item> itemList, ShopNPC vendor,AreaInfo areaInfo) {
-        super(name, areas, command, areaInfo);
+        super(name, areas, command, areaInfo, NPCDict.emptyCharacterList);
         this.vendor = vendor;
         for(Item item: itemList){
             this.items.put(item.getName(), item);
